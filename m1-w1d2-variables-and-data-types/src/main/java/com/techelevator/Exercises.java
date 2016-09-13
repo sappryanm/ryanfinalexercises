@@ -438,13 +438,22 @@ public class Exercises {
         50. Cristina baked 17 croissants. If she planned to serve this equally to
         her seven guests, how many will each have?
         */
-        double cristinaCroissantTotal = 17;
+        /*double cristinaCroissantTotal = 17;
         double cristinaGuestTotal = 7;
         double cristinaRemainder = cristinaCroissantTotal % cristinaGuestTotal;
         int cristinaCrissantTotalMade = 17;
         int cristinaGuestTotalTable = 7;
         int cristinaGuestServingSize = (cristinaCrissantTotalMade/ cristinaGuestTotalTable);
-        System.out.println(cristinaGuestServingSize + " amount of crossiants per guest. With " + cristinaRemainder + " crossiants remainding");
+        System.out.println(cristinaGuestServingSize + " amount of crossiants per guest. With " + cristinaRemainder + " crossiants remainding");*/
+        double cristinaCroissantTotal = 17;
+        double cristinaGuestTotal = 7;
+        double cristinaGuestTotalnd = 7;
+        double cristinaRemainder = cristinaCroissantTotal % cristinaGuestTotal;
+        int cristinaGuestServingsize = (int) (cristinaCroissantTotal / cristinaGuestTotalnd);
+        /*int cristinaCrissantTotalMade = 17;
+        int cristinaGuestTotalTable = 7;
+        int cristinaGuestServingSize = (cristinaCrissantTotalMade/ cristinaGuestTotalTable);*/
+        System.out.println(cristinaGuestServingsize + " amount of crossiants per guest. With " + cristinaRemainder + " crossiants remainding");
 	}
 
 }
