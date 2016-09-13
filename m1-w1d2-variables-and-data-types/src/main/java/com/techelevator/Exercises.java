@@ -8,11 +8,19 @@ public class Exercises {
         1. 4 birds are sitting on a branch. 1 flies away. How many birds are left on
         the branch? 
         */
+		int birdsOnBranch = 4;
+		int fliesAway = 1;
+		int birdsLeftOnBranch = birdsOnBranch - fliesAway;
+		System.out.println("Birds left on Branch" + birdsLeftOnBranch);
 
         /* 
         2. There are 6 birds and 3 nests. How many more birds are there than
         nests? 
         */
+		int birdsOn = 6;
+		int nests = 3;
+		int birdsLeftOnNests = birdsOn - nests;
+		System.out.println("There are "+ birdsLeftOnNests + " more birds then Nests") ;
 
         /* 
         3. 3 raccoons are playing in the woods. 2 go home to eat dinner. How
