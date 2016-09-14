@@ -13,9 +13,15 @@ public class Exercises {
         the branch? 
         */
 		int birdsOnBranch = 4;
+<<<<<<< HEAD
 		int fliesAway = 1;
 		int birdsLeftOnBranch = birdsOnBranch - fliesAway;
 		System.out.println("Birds left on Branch" + birdsLeftOnBranch);
+=======
+		int birdsFlewAway = 1;
+		int birdsLeft = birdsOnBranch - birdsFlewAway;
+		System.out.println("Birds left on the branch: " + birdsLeft);
+>>>>>>> 6bdfba65384b39c527e1cf0c25f4c930871a522b
 
         /* 
         2. There are 6 birds and 3 nests. How many more birds are there than
