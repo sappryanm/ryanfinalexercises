@@ -575,9 +575,12 @@ public class Exercises {
 		int sum = (a + b + c);
 		int zero =  0;
 		int lucky = 13;
+		if (a == lucky && b != 13) { 
+			return c;
+			}
 		if (a == lucky) { 
 			return zero;
-			} 
+			}
 		if (b == lucky) {
 			return a;
 			}
