@@ -393,11 +393,10 @@ public class Exercises {
 	 specialEleven(24) → false
 	 */
 	public boolean specialEleven(int n) {
-		if ( n % 11 == 0 ||  n % 11 == 1 ){
+		if ( n % 11 == 0 ||  n % 11 == 1 )  //condensed from else statement to practice
 			return true;
-	}else {
 		return false;
-	}
+	
 	}
 
 	/*
@@ -484,13 +483,19 @@ public class Exercises {
 	 answerCell(true, false, false) → false
 	 */
 	public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
+		/*if (isAsleep)  // Trying to make it cleaner
+			return false;
+		if (isMom)
+			return true;
+		return false;
+		*/
 		if (isAsleep) {
 			return false;
 		}else if ((isMorning && isMom) || (!isMorning)){
 			return true;
 		} else {	
 		return false;
-		}
+		} 
 	}
 
 	/*
