@@ -244,9 +244,9 @@ public class Exercises {
 	 */
 	public int max1020(int a, int b) {
 	    if(b > a) {
-	    	a = a + b; // if a is 11 b 19  30 = 11 + 19
-	        b = a - b; //  11= 30 -19  b is 11
-	        a = a - b; //  19  = 30 - 11 a is now 19
+	    	a += b; // if a is 11 b 19  30 = 11 + 19 a= a+b
+	        b = a - b; //  11= 30 -19  b is 11 b = a-b
+	        a -= b; //  19  = 30 - 11 a is now 19 a = a-b
 	    }
 	                  
 	    if(10 <= a && a <= 20) {
@@ -258,7 +258,7 @@ public class Exercises {
 	    return 0;
 	}
 		//(x < y) ? x : y
-
+		//if (b > a) ? (10 <= a && a <= 20)  : (10 <= b && b <= 20)
 	/*
 	 When squirrels get together for a party, they like to have cigars. A squirrel party is successful
  	 when the number of cigars is between 40 and 60, inclusive. Unless it is the weekend, in which case 
@@ -322,8 +322,8 @@ public class Exercises {
 	 */
 	public int caughtSpeeding(int speed, boolean isBirthday) {
 		if(isBirthday)
-			speed -= 5; 
-		if(speed <= 60)
+			speed -= 5; // speed = speed - 5  gets speed limit reduced
+		if(speed <= 60)  // Originally put (speed >= 60 && speed <= 80)
 			return 0;
 		else if(speed <= 80)
 			return 1;
