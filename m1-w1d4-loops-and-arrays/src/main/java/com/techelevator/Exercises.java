@@ -36,11 +36,21 @@ public class Exercises {
 	 makePi() → [3, 1, 4]
 	 */
 	public int[] makePi() {
-		int[] pie = new int[] {3, 1, 4};
-		//pie[0] = 3;
-		//pie[1] = 1;
-		//pie[2] = 4;
-		return pie;
+		int[] pie;
+		pie = new int[3]; 
+		pie[0] = 3;
+		pie[1] = 1;
+		pie[2] = 4;
+		
+		//System.out.println(pie[0]);
+		//System.out.println(pie[1]);
+		//System.out.println(pie[2]);
+		//int[] pie = new int[] {3, 1, 4};
+
+		return (pie);
+		//return pie{1];
+		//return pie[2];
+		
 	}
 
 	/*
