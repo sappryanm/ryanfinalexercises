@@ -150,7 +150,13 @@ public class Exercises {
 	 countEvens([1, 3, 5]) → 0
 	 */
 	public int countEvens(int[] nums) {
-		return 0;
+		int counting = 0;
+		for (int x = 0; x < nums.length; x += 1) {
+			if (nums[x] % 2 == 0) {
+				counting++;
+			} else {} //odd number
+		}
+		return counting;
 	}
 
 	/*
@@ -161,10 +167,18 @@ public class Exercises {
 	 sum13([1, 1]) → 2
 	 sum13([1, 2, 2, 1, 13]) → 6
 	 */
-	public int sum13(int[] nums) {
-		return 0;
+	public int sum13(int[] nums) {		
+		int sum = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 13){	
+				i++;
+			}else{
+				sum += nums[i];
+			}
+		}
+		return sum;
 	}
-
+	//sum = sum + nums[i]
 	/*
 	 Given an array of ints, return true if the array contains a 2 next to a 2 somewhere.
 	 has22([1, 2, 2]) → true
@@ -172,8 +186,17 @@ public class Exercises {
 	 has22([2, 1, 2]) → false
 	 */
 	public boolean has22(int[] nums) {
-		return false;
+		
+		for (int ix = 0; ix < (nums.length -1); ix++) {
+			if ( (nums[ix] == 2) && (nums[ix +1] == 2)   ) {
+				return true;
+				}
+		}
+			return false;
+		
 	}
+
+	
 	
 	/*
 	 Given an array of ints, return true if the array contains no 1's and no 3's.
@@ -182,8 +205,13 @@ public class Exercises {
 	 lucky13([1, 2, 4]) → false
 	 */
 	public boolean lucky13(int[] nums) {
-		return false;
-	}
+		for (int ix = 0; ix < (nums.length); ix++) {
+			if ((nums[ix] == 1 ) || (nums[ix] == 3) )
+				return false;
+			}
+			return true;
+		}
+	
 
 	/*
 	 Given an array of ints, return true if the sum of all the 2's in the array is exactly 8.
@@ -192,7 +220,13 @@ public class Exercises {
 	 sum28([1, 2, 3, 4]) → false
 	 */
 	public boolean sum28(int[] nums) {
-		return false;
-	}
+		int sum = 0;
+		for (int ix = 0; ix < (nums.length); ix++) {
+			if (nums[ix] == 2)
+				sum += 2;
+			}
+		return (sum == 8);
+		}
+	
 
 }
