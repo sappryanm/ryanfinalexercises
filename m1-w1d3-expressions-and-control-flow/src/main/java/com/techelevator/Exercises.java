@@ -258,7 +258,38 @@ public class Exercises {
 	    return 0;
 	}
 		//(x < y) ? x : y
-		//if (b > a) ? (10 <= a && a <= 20)  : (10 <= b && b <= 20)
+		//if (b > a) ? (10 <= a && a <= 20)  : (10 <= b && b <= 20)  called ternary operator
+	// ( x > 0) ? x : 0 )        a way to tell if x is a positive number
+	// boolean expression ? result if True : result if false;
+	// boolean x = true;
+	// String result = x? "True" : "False";
+	/*
+	 * boolean aIsInRange = a >= && a <= 20;
+	 * boolean aIsInRange = b >= && b <= 20;
+	 *  if (aIsInrange && bIsInRange) {
+	 *  	if (a > b) {
+	 *  	return a;
+	 *  else
+	 *  	return b;
+	 *  else if (aIsInRange)
+	 *  	return a
+	 *  else if (bIsInRange)
+	 *  	return b
+	 *  else
+	 *  	return 0
+	 *  
+	 *  a = 1
+	 *  b = 1 
+	 *  
+	 *  int x =sum (a++, ++b);
+	 *  a== 1;
+	 *  b == 2;
+	 *  after method
+	 *  a == 2
+	 *  b == 2
+	 *  a ++     b += 3     b = b + 3
+	 *  
+	 */
 	/*
 	 When squirrels get together for a party, they like to have cigars. A squirrel party is successful
  	 when the number of cigars is between 40 and 60, inclusive. Unless it is the weekend, in which case 
@@ -383,6 +414,12 @@ public class Exercises {
 		return (n >= 1 && n <= 10);
 		
 	}
+	/*  if(outsideMode {
+	 * 		if (n <= 1 || n >= 10) {
+	 * 			return true;
+	 * 		} else {
+	 * 			return false
+	 */
 
 	/*
 	 We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of 11. 
@@ -554,6 +591,12 @@ public class Exercises {
 		return (a < b && b < c);
 		
 	}
+	/* if (equal10k) {
+	 * 	
+	 * } else {
+	 * 		return (a < b && b < c;)
+	 * }
+	 */
 
 	/*
 	 Given 3 int values, a b c, return their sum. However, if one of the values is the same as another 
@@ -586,6 +629,9 @@ public class Exercises {
 		int zero =  0;
 		int lucky = 13;
 		if (a == lucky && b != 13) { 
+			//  if ( b == 13
+			//  return 0
+			// return c;
 			return c;
 			}
 		if (a == lucky) { 
@@ -599,7 +645,12 @@ public class Exercises {
 			}
 		//return (a + b + c);
 		return sum;
-		
+		/*  if ( a == 13 && b == 13) {
+		 * 		return 0;
+		 * else if ( a == 13 && c != 13)
+		 * 		return c;
+		 * 
+		 */
 		
 	}
 }
