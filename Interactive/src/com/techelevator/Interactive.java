@@ -32,7 +32,7 @@ public class Interactive {
 	System.out.println("*****COUNTDOWN*******");
 	System.out.println("****************");
 	System.out.println();
-	System.out.println("Welcome to countdown. The rules are simple starting at 21 your or the computer");
+	System.out.println("Welcome to countdown. The rules are simple starting at 21 you or the computer");
 	System.out.println( "take turns deciding if you will take 1 or 2 sticks. The player left with 0 sticks loses");
 	System.out.println( "Do you have what it takes!!!!!!!");
 	System.out.println();
