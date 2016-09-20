@@ -1,8 +1,10 @@
 package com.techelevator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -14,7 +16,12 @@ public class Exercises {
 	/*
 	 Note, for-each is preferred, and should be used when possible.
 	 */
-
+//	List<String> al = stringArray
+//	 stringArray = new List<String>[]; 
+//	System.out.println(Arrays.toString(arr));
+//	for(int i = 0; i < stringArray.length; i++) {
+//		String stringArray = al.get(i);
+//				System.out.println(students.getFirstName());
 	/*
 	 Given an array of Strings, return an ArrayList containing the same Strings in the same order 
 	 array2List( {"Apple", "Orange", "Banana"} )  ->  ["Apple", "Orange", "Banana"]
@@ -22,7 +29,9 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"] 
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+		List<String> stringList = Arrays.asList( stringArray );
+
+		return stringList;
 	}
 	
 	/*
@@ -32,7 +41,12 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
+		//String[] stringArr = stringList.toArray( stringList );
+		String[] stringArr = stringList.toArray( new String[] {} );
+//		for ( String element : stringArr ) {
+//		    System.out.println( element );
+//		}
+		return stringArr;
 	}
 	
 	/*
@@ -43,7 +57,22 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+//		int minLength = 0;
+//	    String result = ;
+//	    String[] words = string.split("\\s+");
+
+	    List<String> stringList = Arrays.asList( stringArray );
+//	    if (stringList.contentEquals(4)){
+//	    	return (stringList.remove(stringList))
+//	    }
+	    Iterator<String> it = stringList.iterator();
+	    while (it.hasNext()) {
+	       if(it.next().length() == 4){
+	        it.remove();
+	       }
+	    }
+		
+		return stringList;
 	}
 
 
