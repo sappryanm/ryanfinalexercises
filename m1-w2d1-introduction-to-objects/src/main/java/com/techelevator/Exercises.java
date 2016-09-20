@@ -9,7 +9,7 @@ public class Exercises {
 	 helloName("X") → "Hello X!"
 	 */
 	public String helloName(String name) {
-		return null;
+		return "Hello " + name + "!";
 	}
 
 	/*
@@ -20,7 +20,8 @@ public class Exercises {
 	 makeAbba("What", "Up") → "WhatUpUpWhat"
 	 */
 	public String makeAbba(String a, String b) {
-		return null;
+		
+		return a + b + b + a;
 	}
 
 	/*
@@ -32,7 +33,8 @@ public class Exercises {
 	 makeTags("cite", "Yay") → "<cite>Yay</cite>"
 	 */
 	public String makeTags(String tag, String word) {
-		return null;
+		
+		return "<" +tag + ">"+ word +"<" +"/"+tag +">";
 	}
 
 	/*
@@ -44,7 +46,7 @@ public class Exercises {
 	 makeOutWord("[[]]", "word") → "[[word]]"
 	 */
 	public String makeOutWord(String out, String word) {
-		return null;
+		return (out.substring(0, 2) + word + out.substring(2, 4));	
 	}
 
 	/*
@@ -55,7 +57,10 @@ public class Exercises {
 	 extraEnd("Hi") → "HiHiHi"
 	 */
 	public String extraEnd(String str) {
-		return null;
+		int l =  str.length();
+		String lenTwo = str.substring((l- 1), l);
+		return (lenTwo + lenTwo + lenTwo);
+				
 	}
 
 	/*
@@ -67,8 +72,19 @@ public class Exercises {
 	 firstTwo("ab") → "ab"
 	 */
 	public String firstTwo(String str) {
-		return null;
-	}
+		/*if (str.length() >= 3) 
+		//String	strBig = ((str.substring(0)) + (str.substring(1)));
+		return str.substring(0, 1);
+		 if(str.length() == 1) {
+			return str.substring(0);
+		 }
+		return str;
+		
+	}*/
+		if(str.length() >= 3)
+			return str.substring(0, 2);
+		return str;
+		}
 
 	/*
 	 Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
@@ -77,7 +93,8 @@ public class Exercises {
 	 firstHalf("abcdef") → "abc"
 	 */
 	public String firstHalf(String str) {
-		return null;
+		//if(str.length() % 2 == 0)
+		return str.substring(0,(str.length()/2));
 	}
 
 	/*
@@ -88,7 +105,9 @@ public class Exercises {
 	 withoutEnd("coding") → "odin"
 	 */
 	public String withoutEnd(String str) {
-		return null;
+		if(str.length() >2) 
+		return str.substring(1, (str.length()-1));
+		return str;
 	}
 	
 	/*
@@ -100,7 +119,10 @@ public class Exercises {
 	 comboString("aaa", "b") → "baaab"
 	 */
 	public String comboString(String a, String b) {
-		return null;
+		if (a.length() >= b.length()) {
+			return (b + a + b);
+		}
+		return (a + b + a);
 	}
 	
 	/*
@@ -111,7 +133,8 @@ public class Exercises {
 	 nonStart("shotl", "java") → "hotlava"
 	 */
 	public String nonStart(String a, String b) {
-		return null;
+		//if (a.length() >= 1)
+		return ( (a.substring(1, (a.length())) + (b.substring(1, (b.length()) ) ) )); 
 	}
 
 	/*
@@ -122,7 +145,7 @@ public class Exercises {
 	 left2("Hi") → "Hi"
 	 */
 	public String left2(String str) {
-		return null;
+		return str.substring(2) + str.substring(0, 2); 
 	}
 
 	/*
@@ -133,7 +156,13 @@ public class Exercises {
 	 right2("Hi") → "Hi"
 	 */
 	public String right2(String str) {
-		return null;
+		int sLen = str.length()-2;
+		//int sLenOne = str.length()-1;
+		//if (str.length() >= 3) 
+			//return str.substring(sLen, sLenOne) + str.substring(1, sLen); 
+		//return str.substring(0, 1);
+		return (str.substring(sLen) + str.substring(0, sLen));
+	
 	}
 
 	/*
@@ -144,7 +173,11 @@ public class Exercises {
 	 theEnd("oh", true) → "o"
 	 */
 	public String theEnd(String str, boolean front) {
-		return null;
+		int l =  str.length();
+		if (front) {
+			return str.substring(0,1);
+		}
+		return str.substring(l-1);
 	}
 
 	/*
@@ -155,7 +188,12 @@ public class Exercises {
 	 withouEnd2("ab") → ""
 	 */
 	public String withouEnd2(String str) {
-		return null;
+		int lenS = str.length() -1 ;
+		if (str.length() > 2){
+		return str.substring(1, lenS);
+		}
+		return "";
+		
 	}
 
 	/*
@@ -166,7 +204,11 @@ public class Exercises {
 	 middleTwo("Practice") → "ct"
 	 */
 	public String middleTwo(String str) {
-		return null;
+		int len = str.length() /2 -1;	
+		
+		return str.substring( (len), (len + 2));
+
+		//return str;
 	}
 
 	/*
@@ -176,7 +218,15 @@ public class Exercises {
 	 endsLy("oddy") → false
 	 */
 	public boolean endsLy(String str) {
-		return false;
+		//int	len = str.length();
+		//String lyCheck = str.substring((str.length() - 2));
+		//String ly = lyCheck;
+			if(str.length() >=2) {
+				return (str.substring((str.length() - 2)).equals("ly"));
+			}
+			return false;
+			
+
 	}
 
 	/*
@@ -187,7 +237,7 @@ public class Exercises {
 	 nTwice("Chocolate", 1) → "Ce"
 	 */
 	public String nTwice(String str, int n) {
-		return null;
+		return (str.substring(0, n) + str.substring(str.length()-n));
 	}
 
 	/*
@@ -199,7 +249,9 @@ public class Exercises {
 	 twoChar("java", 3) → "ja"
 	 */
 	public String twoChar(String str, int index) {
-		return null;
+		if(index <= str.length()-2 && index >= 0)
+			return str.substring(index, index+2);
+		return str.substring(0, 2);
 	}
 
 	/*
@@ -210,7 +262,11 @@ public class Exercises {
 	 middleThree("solving") → "lvi"
 	 */
 	public String middleThree(String str) {
-		return null;
+		//if (str.length() >= 3 && str.length() % 2 == 1) 
+			//return str.substring(1, str.length()-1);
+		//return str
+		int len = str.length()/2;
+		return str.substring(len-1,len+2);
 	}
 
 	/*
@@ -222,6 +278,15 @@ public class Exercises {
 	 hasBad("xxbadxx") → false
 	 */
 	public boolean hasBad(String str) {
+		//if (str.charAt(0))
+		if (str.length() ==3 && str.equals("bad")) {
+			return true;
+		}else if (str.length()>=4)
+				if (str.substring(0, 3).equals("bad") || str.substring(1, 4).equals("bad")){
+			return true;
+		}else  {
+			return false;
+		}
 		return false;
 	}
 
@@ -232,7 +297,11 @@ public class Exercises {
 	 stringTimes("Hi", 1) → "Hi"
 	 */
 	public String stringTimes(String str, int n) {
-		return null;
+		String repeated = new String(new char[n]).replace("\0", str);
+		//for (i = 1; i < n; i ++) 
+			// tmep = 
+			//repeated =   + str
+		return repeated;
 	}
 
 	/*
@@ -243,7 +312,16 @@ public class Exercises {
 	 frontTimes("Abc", 3) → "AbcAbcAbc"
 	 */
 	public String frontTimes(String str, int n) {
-		return null;
+		CharSequence frontcha = str.substring(0, 3);
+		//String repeated = new String(new char[n]).replace("\0", (str.substring(0, 3)));
+		String repeated = new String(new char[n]).replace("\0", frontcha);
+		String repeatedShort = new String(new char[n]).replace("\0", str);
+		if (str.length() >= 3)
+			return repeated;
+		return repeatedShort;
+				//return repeated;
+		
+		
 	}
 
 	/*
