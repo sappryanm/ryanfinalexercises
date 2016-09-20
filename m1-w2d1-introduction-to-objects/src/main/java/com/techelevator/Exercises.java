@@ -58,8 +58,11 @@ public class Exercises {
 	 */
 	public String extraEnd(String str) {
 		int l =  str.length();
-		String lenTwo = str.substring((l- 1), l);
-		return (lenTwo + lenTwo + lenTwo);
+		String lenTwo = str.substring((l- 2), l);
+		//if (str.length() >= 2) {	
+		//}
+			return (lenTwo + lenTwo + lenTwo);
+	//	return lenTwo;
 				
 	}
 
@@ -344,16 +347,29 @@ public class Exercises {
 	 countXX("xxxx") → 
 	 */
 	public int countXX(String str) {
-		int xx = 0;
-		for( int i = 0; i < str.length(); i++)
-			if (str.substring(i+1) == null) {
-				if(str.substring(i).equalsIgnoreCase("x") && str.substring(i+1).equalsIgnoreCase("x")) {
-					xx = xx + 1;
+		/*int xx = 0;
+		for( int i = str.indexOf( "xx");
+		; i != -1; i < str.length() -1; i++)
+			//if (str.substring(i+1) == null) {
+			if (str.substring(i+1).isEmpty()) {
+				//if(str.substring(i).equalsIgnoreCase("x") && str.substring(i+1).equalsIgnoreCase("x")) {
+				if( str.charAt(i) == 'x' && str.charAt(i+1) == 'x' ) 	
+				xx ++;
 			}
+		return xx;*/
+        int counter = 0;
+
+        for ( int i = str.indexOf( "xx" );
+        		i != -1; i = str.indexOf( "xx", i+= 1 ) )
+        {
+            counter++;
+        }
+
+        return counter;
 		
 		}
-		return xx;
-	}
+		
+	
 
 	/*
 	 Given a string, return true if the first instance of "x" in the string is immediately followed by another "x".
@@ -362,7 +378,14 @@ public class Exercises {
 	 doubleX("xxxxx") → true
 	 */
 	public boolean doubleX(String str) {
-		return false;
+	      int i = str.indexOf( 'x' );
+
+	        if ( i == -1 || i == str.length() - 1 )
+	        {
+	            return false;
+	        }
+
+	        return str.substring( i, i + 2 ).equals( "xx" );
 	}
 
 	/*
@@ -372,7 +395,11 @@ public class Exercises {
 	 stringBits("Heeololeo") → "Hello"
 	 */
 	public String stringBits(String str) {
-		return null;
+		int len = str.length();
+		StringBuilder stbuild = new StringBuilder(len+1);
+		for(int i = 0; i < len; i += 2)
+			stbuild.append(str.charAt(i));
+		return stbuild.toString();
 	}
 
 	/*
@@ -382,7 +409,18 @@ public class Exercises {
 	 stringSplosion("ab") → "aab"
 	 */
 	public String stringSplosion(String str) {
-		return null;
+		StringBuilder stbuild;
+		int len = str.length();
+		int bufferSize = 1;
+		for(int i = 2; i <= len; i++)
+			bufferSize *= i;
+		stbuild = new StringBuilder(bufferSize);
+		for(int i = 1; i <= len; i++)
+		{
+			for(int j = 0; j < i; j++)
+				stbuild.append(str.charAt(j));	
+		}
+		return stbuild.toString();
 	}
 
 	/*
@@ -393,7 +431,17 @@ public class Exercises {
 	 last2("axxxaaxx") → 2
 	 */
 	public int last2(String str) {
-		return 0;
+		int len = str.length() - 2;
+		int counter = 0;
+		if(len >= 0){
+			String matching = str.substring(len);
+			for(int i = 0; i < len; i++) {
+				if(str.substring(i, i+2).equals(matching)){
+					counter++;
+				}
+			}
+		}
+		return counter;
 	}
 
 	/*
@@ -430,7 +478,19 @@ public class Exercises {
 	 altPairs("CodingHorror") → "Congrr"
 	 */
 	public String altPairs(String str) {
-		return null;
+		int len = str.length();
+		if(len >= 3){
+			StringBuilder stbuild = new StringBuilder();
+			for(int i = 0; i < len; i += 4)
+			{
+				stbuild.append(str.charAt(i));
+				if(i+1 < len)
+					stbuild.append(str.charAt(i+1));
+			}
+			return stbuild.toString();
+		}
+		else
+			return str;
 	}
 
 	/*
@@ -441,7 +501,23 @@ public class Exercises {
 	 stringYak("yak123ya") → "123ya"
 	 */
 	public String stringYak(String str) {
-		return null;
+		int len = str.length();
+		int i = 0;
+		char ch;
+		StringBuilder stbuild = new StringBuilder(len);
+		while(i < len)
+		{
+			ch = str.charAt(i);
+			if(i+2 < len && ch == 'y' && str.charAt(i+2) == 'k')
+				i += 3;
+			else
+			{
+				stbuild.append(ch);
+				i++;
+			}
+		}
+		return stbuild.toString();
+
 	}
 	
 }
