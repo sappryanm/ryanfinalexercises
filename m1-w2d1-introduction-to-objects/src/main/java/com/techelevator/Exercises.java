@@ -312,15 +312,28 @@ public class Exercises {
 	 frontTimes("Abc", 3) → "AbcAbcAbc"
 	 */
 	public String frontTimes(String str, int n) {
-		CharSequence frontcha = str.substring(0, 3);
+		//CharSequence frontcha = str.substring(0, 3);
 		//String repeated = new String(new char[n]).replace("\0", (str.substring(0, 3)));
-		String repeated = new String(new char[n]).replace("\0", frontcha);
-		String repeatedShort = new String(new char[n]).replace("\0", str);
-		if (str.length() >= 3)
-			return repeated;
-		return repeatedShort;
+		//String repeated = new String(new char[n]).replace("\0", frontcha);
+		//String repeatedShort = new String(new char[n]).replace("\0", str);
+		//if (str.length() >= 3)
+			//return repeated;
+		//return repeatedShort;
 				//return repeated;
-		
+		//if (n <= 0) return "";
+		  // else if (n % 2 == 0) return repeat(str.substring(0, 3), n/2);
+		   //else return str.substring(0, 3) + repeat(str.substring(0, 3), n/2);
+		int len = str.length();
+		StringBuilder stbuilder;
+		String front;
+		if(len >= 3)
+			front = str.substring(0, 3);
+		else
+			front = str;
+		stbuilder = new StringBuilder(len*n);
+		for(int i = 1; i <= n; i++)
+			stbuilder.append(front);
+		return stbuilder.toString();
 		
 	}
 
@@ -383,7 +396,23 @@ public class Exercises {
 	 stringX("xabxxxcdx") → "xabcdx"
 	 */
 	public String stringX(String str) {
-		return null;
+		int len = str.length();
+		if(len >= 2)
+		{
+			len--;
+			StringBuilder stbuild = new StringBuilder(len-1);
+			stbuild.append(str.charAt(0));
+			for(int i = 1; i < len; i++)
+			{
+				if(str.charAt(i) != 'x'){
+					stbuild.append(str.charAt(i));
+				}
+			}
+			stbuild.append(str.charAt(len));
+			return stbuild.toString();
+		}
+		else
+			return str;
 	}
 
 	/*
