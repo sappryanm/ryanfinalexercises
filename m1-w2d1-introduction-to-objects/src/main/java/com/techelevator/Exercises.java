@@ -344,7 +344,15 @@ public class Exercises {
 	 countXX("xxxx") → 
 	 */
 	public int countXX(String str) {
-		return 0;
+		int xx = 0;
+		for( int i = 0; i < str.length(); i++)
+			if (str.substring(i+1) == null) {
+				if(str.substring(i).equalsIgnoreCase("x") && str.substring(i+1).equalsIgnoreCase("x")) {
+					xx = xx + 1;
+			}
+		
+		}
+		return xx;
 	}
 
 	/*
