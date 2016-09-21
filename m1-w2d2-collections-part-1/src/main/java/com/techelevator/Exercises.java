@@ -247,9 +247,10 @@ public class Exercises {
 		ArrayList<Integer> numlist = new ArrayList<>();
 		  for (Integer ix : numlist) {
 			 // && ix.equals(ix))
-		        if (numlist.contains(intToFind) && numlist.contains(ix)){
-		            return true;
+		        if (integerList.contains(intToFind) && ix ==ix){
+		           
 		        }
+		        return true;
 		    }
 		    return false;
 	}
