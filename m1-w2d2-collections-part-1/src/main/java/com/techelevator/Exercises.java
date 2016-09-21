@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -66,20 +67,19 @@ public class Exercises {
 //	    String[] words = string.split("\\s+");
 //		stringArray.toString().replaceAll(char);
 		//String[] ="";
-           List<String> strl = new ArrayList<String>();
-           List<String> strtest = new ArrayList<String>();
-		for(int n = 0; n < strl.size(); n++){ // cycle throught each word
-	        String word = strl.get(n); 
-	        if (word.length() != 4) {
-	        	//strltest =   word.addAll
-	        		//word.add(stringArray[n]);
-	        	}
-	        	//return strl.listIterator(n);
-	       return (strl);
-	        }
-		return strl;
-		
-		}
+          // int strl = stringArray.length;
+          // List<String> strl = new ArrayList<String>();
+           List<String> list= new ArrayList<String>();
+           for (int i=0; i < stringArray.length; i++ ) {
+               if (stringArray[i].length() == 4) {
+                   
+               }
+               else {
+                   list.add(stringArray[i]);
+               }
+           }
+           return list;
+	}
 	    	/*List<Integer> odds = new ArrayList<Integer>();
 			   for(int i = 0; i < integerArray.length; i++)
 			   {
@@ -265,8 +265,42 @@ public class Exercises {
 	 HINT: To convert an integer x to a string you can call x.toString() in your code (e.g. if x = 1 then x.ToString() equals "1")
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
+		//List<String> wordList = new ArrayList<String>(integerArray); 
+		//String[] unique = new HashSet<String>(Arrays.asList(integerArray)).toArray(new String[0]);
+		//Set<String> mySet = new HashSet<String>(Arrays.asList(wordList)); 
+		//Set<String> mySet = new HashSet<String>(wordList); 
+		//List<String> wordList = new ArrayList<String>();
+		//wordList.size() -wordList.size()+1
+		//integerArray.length - (integerArray.length+1)
+		int pos = integerArray.length+1;
+		   String strnew[]=new String[(integerArray.length - pos)];
+		   for (int i = 0; i < integerArray.length -1; i++) {
+		        int value = integerArray.length + i;
+		        if (value % 15 == 0) {
+		            strnew[i] = "FizzBuzz";
+		        } else if (value % 3 == 0) {
+		            strnew[i] = "Fizz";
+		        } else if (value % 5 == 0) {
+		            strnew[i] = "Buzz";
+		        } else {
+		            strnew[i] = String.valueOf(value);
+		        }
+		   // Set<String> mySet = new HashSet<String>(wordList); 
+		        List<String> newList = new ArrayList<String>(integerArray.length); 
+				//List<String> newList = new ArrayList<String>(strnew.size()) 
+						for (String ix: strnew) { 
+						  newList.add(String.valueOf(strnew));
+						}
+		   return newList;
+		  }
+		   List<String> newList = new ArrayList<String>(integerArray.length); 
+			//List<String> newList = new ArrayList<String>(strnew.size()) 
+					for (String ix: strnew) { 
+					  newList.add(String.valueOf(strnew));
+					}
+		return newList;
 	}
+	
 
 	/*
 	 Given a list of Strings, return a list that contains the distinct values. In other words, no value is to be
@@ -275,12 +309,18 @@ public class Exercises {
 	 distinctValues( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"] ) -> ["jingle", "bells", "all", "the", "way"]
 	 */
 	public List<String> distinctValues(List<String> stringList) {
-		//Set<String> distinct = new Set<String>(stringList);
+		//List<String> distinct = new ArrayList<>();\
+		//String[] unique = new HashSet<String>(Arrays.asList(stringList)).toArray(new String[0]);
+		//List<String> wordList = Arrays.asList(); 
+		List<String> wordList = new ArrayList<String>(stringList); 
+		//Set<String> mySet = new HashSet<String>(Arrays.asList(wordList)); 
+		Set<String> mySet = new HashSet<String>(wordList); 
+		List<String> distinct = new ArrayList<String>(mySet); 
 		//Set<String> distinct  = new HashSet<String>(stringList);
 		//return (List<String>) (distinct);
-		Set<String> set2 = stringList.stream().collect(Collectors.toSet());
-	    Set<String> set3 = stringList.stream().collect(Collectors.toCollection(HashSet::new));
-		return (stringList);
+		//Set<String> set2 = stringList.stream().collect(Collectors.toSet());
+	    //Set<String> set3 = stringList.stream().collect(Collectors.toCollection(HashSet::new));
+		return (distinct);
 	}
 
 	/*
@@ -293,23 +333,7 @@ public class Exercises {
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
 		//ArrayList<Integer> numbers = new ArrayList<Integer>();
 		//List<Integer> l = new ArrayList<Integer>());
-		  /* int max=0,sum=0;
-		    for(List l:listOne){
-		        assert l!=null;
-		        if(l.size()>max){
-		            max=l.size();
-		        }
-		        sum+=l.size();
-		    }
-		    List<Intger> combined=new ArrayList<>(sum);
-		    for(int i=0;i<max;i++){
-		        for(Integer l:listTwo){
-		            if(i<l.size()){
-		                combined.add(l.get(i));
-		            }
-		        }
-		    }
-		return combined;*/
+	
 		 ArrayList<Integer> combine = new ArrayList<>(listOne.size() + listTwo.size());
 
 		    for(int i = 0, j = 0; i < listOne.size() || j < listTwo.size(); i++, j++) {
@@ -332,7 +356,17 @@ public class Exercises {
 	 boardingGate( [0, -1, 44, 31, 17, 7, 27, 16, 26, 6] ) -> [7, 6, 17, 16, 27, 26]
 	 */
 	public List<Integer> boardingGate(List<Integer> seatNumberList) {
+		//List<Integer> l2 = new ArrayList<>(seatNumberList);
+		//List<String> l3 = Collections.unmodifiableList(Arrays.asList("element1", "element2"));
+		List slist = new ArrayList();
+		//Comparator comparator1 = new Arrays.sort();
+		//Collections.sort(slist, comparator1);	
+		//add elements to the list
+		Queue<Integer> queuelist;
+		//for(Integer integer : queuelist){
+	
 		return null;
 	}
 
 }
+
