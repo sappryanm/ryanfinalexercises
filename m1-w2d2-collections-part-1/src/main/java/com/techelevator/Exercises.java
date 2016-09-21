@@ -152,18 +152,19 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		Double empty = 0.0;
+		//Double empty = 0.0;
 		
-		if (intArray == null) {
+		/*if (intArray == null) {
 		    return null;
 		  } else if (intArray.length == 0) {
 		    return null ;
-		  }
-		   double[] result = new double[intArray.length];
-		ArrayList<Double> results = new ArrayList<Double>();
-		  for (int i = 0; i < results.size(); i++) {
-		  //results[i] = (results[i]/ 2);
-		 // results = this.arrayInt2ListDouble(intArray)/2;
+		  }*/
+		   //double[] result = new double[intArray.length];
+		List<Double> results = new ArrayList<>();
+		  //for (int i = 0; i < intArray.length; i++) {
+				for (Integer i: intArray){
+		 results.add((double)(i / 2));
+			  // results = this.arrayInt2ListDouble(intArray)/2;
 		  }
 	return (results);
 	}
@@ -245,7 +246,8 @@ public class Exercises {
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
 		ArrayList<Integer> numlist = new ArrayList<>();
 		  for (Integer ix : numlist) {
-		        if (numlist.contains(intToFind) && ix==ix) {
+			 // && ix.equals(ix))
+		        if (numlist.contains(intToFind) && numlist.contains(ix)){
 		            return true;
 		        }
 		    }
@@ -269,14 +271,28 @@ public class Exercises {
 		//String[] unique = new HashSet<String>(Arrays.asList(integerArray)).toArray(new String[0]);
 		//Set<String> mySet = new HashSet<String>(Arrays.asList(wordList)); 
 		//Set<String> mySet = new HashSet<String>(wordList); 
-		//List<String> wordList = new ArrayList<String>();
+		List<String> wordList = new ArrayList<>();
+		for (int i =0; i <integerArray.length; i++) {
+		if (integerArray[i] % 5 == 0 && integerArray[i] % 3 == 0) {
+			wordList.add("FizzBuzz");
+		} else if (integerArray[i] % 5 == 0) {
+			wordList.add("Buzz");
+		} else if (integerArray[i] % 3 == 0) {
+		wordList.add("Fizz");
+		} else {
+		wordList.add(String.valueOf(integerArray[i]));
+		}
+}
+		return wordList;
 		//wordList.size() -wordList.size()+1
 		//integerArray.length - (integerArray.length+1)
-		int pos = integerArray.length+1;
-		   String strnew[]=new String[(integerArray.length - pos)];
-		   for (int i = 0; i < integerArray.length -1; i++) {
-		        int value = integerArray.length + i;
-		        if (value % 15 == 0) {
+		//int pos = integerArray.length+1;
+		   //String strnew[]=new String[(integerArray.length - pos)];
+		
+		   
+		  // for (int i = 0; i < integerArray.length; i++) {
+			
+		        /* if (value % 15 == 0) {
 		            strnew[i] = "FizzBuzz";
 		        } else if (value % 3 == 0) {
 		            strnew[i] = "Fizz";
@@ -284,22 +300,25 @@ public class Exercises {
 		            strnew[i] = "Buzz";
 		        } else {
 		            strnew[i] = String.valueOf(value);
-		        }
+		        }*/
 		   // Set<String> mySet = new HashSet<String>(wordList); 
-		        List<String> newList = new ArrayList<String>(integerArray.length); 
+		        //List<String> newList = new ArrayList<String>(integerArray.length); 
 				//List<String> newList = new ArrayList<String>(strnew.size()) 
-						for (String ix: strnew) { 
-						  newList.add(String.valueOf(strnew));
-						}
-		   return newList;
-		  }
-		   List<String> newList = new ArrayList<String>(integerArray.length); 
+						//for (String ix: strnew) { 
+						  //newList.add(String.valueOf(strnew));
+		       // return strnew : Integer.toString(value);
+		   
+		   
+		   //return strnew.length > 0 ? strnew : Integer.toString(value);
+		 
+		 //return strnew length > 0 ? strnew : Integer.toString(wordList);
+}
+
+	/*	   List<String> newList = new ArrayList<String>(integerArray.length); 
 			//List<String> newList = new ArrayList<String>(strnew.size()) 
 					for (String ix: strnew) { 
-					  newList.add(String.valueOf(strnew));
-					}
-		return newList;
-	}
+					  newList.add(String.valueOf(strnew)); */
+		
 	
 
 	/*
@@ -358,7 +377,7 @@ public class Exercises {
 	public List<Integer> boardingGate(List<Integer> seatNumberList) {
 		//List<Integer> l2 = new ArrayList<>(seatNumberList);
 		//List<String> l3 = Collections.unmodifiableList(Arrays.asList("element1", "element2"));
-		List slist = new ArrayList();
+		List<Integer> slist = new ArrayList();
 		//Comparator comparator1 = new Arrays.sort();
 		//Collections.sort(slist, comparator1);	
 		//add elements to the list
