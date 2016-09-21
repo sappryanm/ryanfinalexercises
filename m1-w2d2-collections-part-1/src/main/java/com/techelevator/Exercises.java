@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -166,7 +167,7 @@ public class Exercises {
 		 results.add((double)(i / 2));
 			  // results = this.arrayInt2ListDouble(intArray)/2;
 		  }
-	return (results);
+	return results;
 	}
 		//Collection<String> slist = new ArrayList<String>();
 		/* List<Double> numList = new ArrayList<Double>();
@@ -233,7 +234,7 @@ public class Exercises {
 		      }
 		     
 		   }
-		   return (odds);
+		   return odds;
 	}	
 
 	/* 
@@ -244,15 +245,23 @@ public class Exercises {
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
-		ArrayList<Integer> numlist = new ArrayList<>();
-		  for (Integer ix : numlist) {
-			 // && ix.equals(ix))
-		        if (integerList.contains(intToFind) && ix ==ix){
-		           
+		//ArrayList<Integer> numlist = new ArrayList<>();
+		int count = 0;
+		for (Integer value : integerList) {
+		if (value == intToFind) {
+		count++;
+		}
+		}
+		return (count >= 2);
+		
+		/*int count = 0;
+		  for (Integer value : integerList) {
+			  // && ix.equals(ix))
+		        if (integerList == intToFind && null)
+		        {
+		        	count++;
 		        }
-		        return true;
-		    }
-		    return false;
+					return (count >= 2); */
 	}
 	
 	/*
@@ -378,15 +387,41 @@ public class Exercises {
 	public List<Integer> boardingGate(List<Integer> seatNumberList) {
 		//List<Integer> l2 = new ArrayList<>(seatNumberList);
 		//List<String> l3 = Collections.unmodifiableList(Arrays.asList("element1", "element2"));
-		List<Integer> slist = new ArrayList();
+		//List<Integer> slist = new ArrayList();
 		//Comparator comparator1 = new Arrays.sort();
 		//Collections.sort(slist, comparator1);	
 		//add elements to the list
-		Queue<Integer> queuelist;
-		//for(Integer integer : queuelist){
-	
-		return null;
-	}
+		Queue<Integer> queueRangeOne = new ArrayDeque<Integer> ();
+		Queue<Integer> queueRangeTwo = new ArrayDeque<Integer> ();
+		Queue<Integer> queueRangeThree = new ArrayDeque<Integer> ();
+
+		List<Integer> newList = new ArrayList<Integer>();
+		for (Integer remover : seatNumberList) {
+		if (remover <= 10 && remover >= 1) {
+		queueRangeOne.add(remover);
+		}
+		else if (remover <= 20 && remover >= 11) {
+		queueRangeTwo.add(remover);
+		}
+		else if (remover <= 30 && remover >= 21) {
+		queueRangeThree.add(remover);
+		}
+		}
+
+		for (Integer adder : queueRangeOne) {
+		    newList.add(adder);
+		}
+		for (Integer adder : queueRangeTwo) {
+		    newList.add(adder);
+		}
+		for (Integer adder : queueRangeThree) {
+		    newList.add(adder);
+		}
+		
+		
+			return newList;	
+}//for(Integer integer : queuelist){
+
 
 }
 

@@ -1,6 +1,9 @@
 package com.techelevator;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Exercises {
 
@@ -34,7 +37,23 @@ public class Exercises {
 	 * 
 	 */
 	public String animalGroupName(String animalName) {
-		return null;
+		Map<String, String> animalGroups = new HashMap<String, String>();
+		
+		animalGroups.put("rhino", "Crash");
+		animalGroups.put("giraffe", "Tower");
+		animalGroups.put("elephant", "Herd");
+		animalGroups.put("lion", "Pride");
+		animalGroups.put("crow", "Murder");
+		animalGroups.put("pigeon", "Kit");
+		animalGroups.put("flamingo", "Pat");
+		animalGroups.put("dog", "Pack");
+		animalGroups.put("crocodile", "Float");
+		
+		if(!animalGroups.containsKey(animalName.toLowerCase())){
+			return "unknown";
+		} else {
+		return (animalGroups.get(animalName.toLowerCase())) ;
+		}
 	}
 
 	/*
@@ -60,7 +79,19 @@ public class Exercises {
 	 * 
 	 */
 	public Double isItOnSale(String itemNumber) {
-		return null;
+		Map<String, Double>  saleprice = new HashMap<String, Double>();
+		
+		saleprice.put("kitchen4001", 0.20);
+		saleprice.put("garage1070", 0.15);
+		saleprice.put("livingroom", 0.10);
+		saleprice.put("kitchen6073", 0.40);
+		saleprice.put("bedroom3434", 0.60);
+		saleprice.put("bath0073", 0.15);
+		
+		if (!saleprice.containsKey(itemNumber.toLowerCase())) {
+			return 0.00;
+		}
+		return saleprice.get(itemNumber.toLowerCase());
 	}
 	
 	/*
@@ -74,7 +105,25 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
-		return null;
+		int peterMoney = peterPaul.get("Peter");
+		int paulMoney = peterPaul.get("Paul");
+		if(peterMoney > 0 && paulMoney <1000)
+		{
+			int halfOfPetersMoney = peterMoney /2;
+			paulMoney += halfOfPetersMoney;
+			peterMoney -= halfOfPetersMoney;
+		}
+		//Map<String, Integer> peterPaul = new HashMap<String, Integer>();
+		
+		
+		peterPaul.put("Peter", peterMoney);
+		peterPaul.put("Paul", paulMoney);
+		/*
+		Map<String, Integer> listpeter = new HashMap<String, Integer>();
+		listpeter.put("Peter", 2000);
+		listpp.put("Peter", 2000); */
+		
+		return peterPaul;
 	}
 	
 	/*
@@ -87,7 +136,21 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
-		return null;
+		int peterMoney = peterPaul.get("Peter");
+		int paulMoney = peterPaul.get("Paul");
+		int partnership = 0;
+		if(peterMoney >= 5000 && paulMoney >= 10000)
+		{
+			//double quarterOfMoney =  0.25;
+			partnership = (paulMoney/4) + (peterMoney/4);
+			paulMoney -= (paulMoney /4);
+			peterMoney -= (peterMoney / 4);
+			
+		}
+		peterPaul.put("Peter", peterMoney);
+		peterPaul.put("Paul", paulMoney);
+		peterPaul.put("PeterPaulPartnership", partnership);
+		return peterPaul;
 	}
 	
 	/*
@@ -99,7 +162,16 @@ public class Exercises {
 	 * beginningAndEnding(["muddy", "good", "moat", "good", "night"]) → {"g": "d", "m": "t", "n": "t"}
 	 */
 	public Map<String, String> beginningAndEnding(String[] words) {
-		return null;
+		Map<String, String>  list = new HashMap<String, String>();
+		//for(String i: words) {
+		for ( int  i = 0; i < words.length; i++)	{
+		String newString = words[i];
+		String newKey = newString.substring(0 ,1);
+		String newValue = newString.substring(newString.length()-1);
+		list.put(newKey, newValue);
+			
+		}
+		return list;
 	}
 	
 	/*
@@ -114,8 +186,28 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> wordCount(String[] words) {
-		return null;
-	}
+	/*	Map<String, Integer>  list = new HashMap<String, Integer>();
+		for( int i = 0; i < words.length; i++);{
+			int count = 1;
+			for( int x = i + 1; x < words.length; x++); {
+				if((words[i]) == (words[x]));
+				count ++;
+			} list.putIfAbsent(words[1], count);
+			}
+		return list; */
+		Map<String, Integer> countTheLetter = new HashMap<String, Integer>();
+		for (String i: words) {
+		if (!countTheLetter.containsKey(i)) {
+		countTheLetter.put(i, 1);
+		}
+		else {
+		int count = countTheLetter.get(i);
+		countTheLetter.put(i, count + 1);
+		}
+		}
+		return countTheLetter;
+		}
+	
 	
 	/*
 	 * Given an array of int values, return a Map<Integer, Integer> with a key for each int, with the value the 
@@ -129,8 +221,19 @@ public class Exercises {
 	 * 
 	 */
 	public Map<Integer, Integer> integerCount(int[] ints) {
-		return null;
-	}
+		Map<Integer, Integer> intCountList = new HashMap<Integer, Integer>();
+		for (Integer i: ints) {
+		if (!intCountList.containsKey(i)) {
+		intCountList.put(i, 1);
+		}
+		else {
+		int count = intCountList.get(i);
+		intCountList.put(i, count + 1);
+		}
+		}
+		return intCountList;
+		}
+	
 	
 	/*
 	 * Given an array of strings, return a Map<String, Boolean> where each different string is a key and value
@@ -142,8 +245,18 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Boolean> wordMultiple(String[] words) {
-		return null;
-	}
+		Map<String, Boolean> wordM = new HashMap<String, Boolean>();
+		for (String i: words) {
+		if (!wordM.containsKey(i)) {
+		wordM.put(i, false);
+		}
+		else {
+		//Boolean count = wordM.get(i);
+		wordM.put(i, true);
+		}
+		}
+		return wordM;
+		}
 	
 	/*
 	 * Given two maps, Map<String, Integer>, merge the two into a new map, Map<String, Integer> where keys in Map2, 
@@ -156,7 +269,22 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse, Map<String, Integer> remoteWarehouse) {
-		return null;
+		HashMap<String, Integer> map1 = new HashMap<String, Integer>();
+		HashMap<String, Integer> map2 = new HashMap<String, Integer>();
+		HashMap<String, Integer> consolidateInventory = new HashMap<String, Integer>();
+		Map<String, Integer> combinedMap = Stream.concat(map1.entrySet().stream(), map2.entrySet().stream())
+			    .collect(Collectors.groupingBy(Map.Entry::getKey,
+			             Collectors.summingInt(Map.Entry::getValue)));
+		/*m2.forEach((k, v) -> m.merge(k, v, (v1, v2) -> v1 + v2));
+		consolidateInventory = new HashMap<>(map1);
+		for (Map.Entry<String, Integer> e : map2.entrySet())
+		    consolidateInventory.merge(e.getKey(), e.getValue(), String:: Integer);
+		//or instead of the above loop
+		map2.forEach((k, v) -> consolidateInventory.merge(k, v, String::concat));
+	*/
+	
+		return consolidateInventory(map2, map2);
+		
 	}
 
 	/*
