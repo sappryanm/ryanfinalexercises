@@ -2,6 +2,7 @@ package com.techelevator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -10,6 +11,9 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
+import java.util.stream.Collectors;
+
+import javax.swing.text.StringContent;
 
 public class Exercises {
 
@@ -60,20 +64,58 @@ public class Exercises {
 //		int minLength = 0;
 //	    String result = ;
 //	    String[] words = string.split("\\s+");
-
-	    List<String> stringList = Arrays.asList( stringArray );
+//		stringArray.toString().replaceAll(char);
+		//String[] ="";
+           List<String> strl = new ArrayList<String>();
+           List<String> strtest = new ArrayList<String>();
+		for(int n = 0; n < strl.size(); n++){ // cycle throught each word
+	        String word = strl.get(n); 
+	        if (word.length() != 4) {
+	        	//strltest =   word.addAll
+	        		//word.add(stringArray[n]);
+	        	}
+	        	//return strl.listIterator(n);
+	       return (strl);
+	        }
+		return strl;
+		
+		}
+	    	/*List<Integer> odds = new ArrayList<Integer>();
+			   for(int i = 0; i < integerArray.length; i++)
+			   {
+			      if(integerArray[i] % 2 != 0)
+			      {
+			         odds.add(integerArray[i]);
+			      }
+			     
+			   }
+			   return (odds); */
+	        	// get a word from the list
+	        //char[] letters = word.toCharArray(); // split the word into letters
+	       // int fourLetters = 0;
+	        //for(int i = 1; i < letters.length; i++){ // search for all double letters
+	          //  if(letters.length == 3  )         ;
+	        
+//		if (stringList.contentEquals(4)){
+//	    	return (stringList.remove(stringList))
+		
+	    
+	
+	    
 //	    if (stringList.contentEquals(4)){
 //	    	return (stringList.remove(stringList))
 //	    }
-	    Iterator<String> it = stringList.iterator();
-	    while (it.hasNext()) {
-	       if(it.next().length() == 4){
-	        it.remove();
-	       }
-	    }
+//	    int len = string.length();
+//	    if (st)
+//	    Iterator<String> it = stringList.iterator();
+//	    while (it.hasNext()) {
+//	       if(it.next().length() == 4){
+//	        it.remove();
+//	       }
+//	    }
 		
-		return stringList;
-	}
+		//return stringList;
+	
 
 
 	/*
@@ -85,7 +127,22 @@ public class Exercises {
 		-> ["way", "the", "all", "jingle", "bells", "jingle", "bells", "jingle"]
 	 */
 	public List<String> reverseList(List<String> stringList) {
-		return null;
+		
+		Collection<String> slist = new ArrayList<String>();
+		//Stack<String> lifo = new Stack();	
+		
+			/*Stack<String> lifo = new Stack<String>(stringList);
+			List<String> list = new ArrayList<String>( lifo );
+			lifo.push(al);
+			for (String x : list)
+	        {
+	            System.out.println(x);
+	        }*/
+		Stack<String> lifo = new Stack<String>();
+			   Collections.reverse(stringList);
+
+
+		return stringList;
 	}
 
 	/*
@@ -95,18 +152,68 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+		Double empty = 0.0;
+		
+		if (intArray == null) {
+		    return null;
+		  } else if (intArray.length == 0) {
+		    return null ;
+		  }
+		   double[] result = new double[intArray.length];
+		ArrayList<Double> results = new ArrayList<Double>();
+		  for (int i = 0; i < results.size(); i++) {
+		  //results[i] = (results[i]/ 2);
+		 // results = this.arrayInt2ListDouble(intArray)/2;
+		  }
+	return (results);
 	}
+		//Collection<String> slist = new ArrayList<String>();
+		/* List<Double> numList = new ArrayList<Double>();
+//		 if (numList == null || numList.isEmpty()) {
+//		        return numList;
+//		    }
+		// ((Object) numList).setAll(double[])
+		 double n = numList.size();
+		    for (Double i: numList){
+		    //(int i = 0; i < numList; i++) {
+		
+		        Double newVal = ((double) (i)/ 2.0);
+		        numList.add( newVal);
+		        
+		    }
+	
+		    return numList;*/
+		
+							
+	
 	
 	/*
 	 Given a List of Integers, return the largest value.
 	 findLargest( [11, 200, 43, 84, 9917, 4321, 1, 33333, 8997] ) -> 33333
 	 findLargest( [987, 1234, 9381, 731, 43718, 8932] ) -> 43718
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
-	 */
+	 */ 
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		ArrayList temp=new ArrayList<Integer>();
+	    for (Object object : integerList) {
+	        if(object instanceof Integer){
+	            temp.add(object);
+	        }
+	    }
+	    return (Integer) Collections.max(temp);
 	}
+		//		if (integerList == null) return 0;
+//		  if (integerList.size() == 1) return 1;
+//
+//		  return getMaxSequence(integerList.get(0), integerList.subList(1, integerList.size()),1);
+		
+		//int lastArrayNumber = aryNums.length - 1;
+		//System.out.println("Highest Number: " + aryNums[lastArrayNumber]);
+	//private Integer getMaxSequence(Integer integer, List<Integer> subList, int i) {
+		// TODO Auto-generated method stub
+		//return null;
+	
+	
 	
 	/*
 	 Given an array of Integers, return a List of Integers containing just the odd values.
@@ -115,9 +222,19 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]  
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
-	}
-	
+
+		List<Integer> odds = new ArrayList<Integer>();
+		   for(int i = 0; i < integerArray.length; i++)
+		   {
+		      if(integerArray[i] % 2 != 0)
+		      {
+		         odds.add(integerArray[i]);
+		      }
+		     
+		   }
+		   return (odds);
+	}	
+
 	/* 
 	 Given a List of Integers, and an int value, return true if the int value appears two or more times in 
 	 the list.
@@ -126,7 +243,13 @@ public class Exercises {
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
-		return false;
+		ArrayList<Integer> numlist = new ArrayList<>();
+		  for (Integer ix : numlist) {
+		        if (numlist.contains(intToFind) && ix==ix) {
+		            return true;
+		        }
+		    }
+		    return false;
 	}
 	
 	/*
@@ -152,7 +275,12 @@ public class Exercises {
 	 distinctValues( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"] ) -> ["jingle", "bells", "all", "the", "way"]
 	 */
 	public List<String> distinctValues(List<String> stringList) {
-		return null;
+		//Set<String> distinct = new Set<String>(stringList);
+		//Set<String> distinct  = new HashSet<String>(stringList);
+		//return (List<String>) (distinct);
+		Set<String> set2 = stringList.stream().collect(Collectors.toSet());
+	    Set<String> set3 = stringList.stream().collect(Collectors.toCollection(HashSet::new));
+		return (stringList);
 	}
 
 	/*
@@ -163,8 +291,36 @@ public class Exercises {
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
-		return null;
+		//ArrayList<Integer> numbers = new ArrayList<Integer>();
+		//List<Integer> l = new ArrayList<Integer>());
+		  /* int max=0,sum=0;
+		    for(List l:listOne){
+		        assert l!=null;
+		        if(l.size()>max){
+		            max=l.size();
+		        }
+		        sum+=l.size();
+		    }
+		    List<Intger> combined=new ArrayList<>(sum);
+		    for(int i=0;i<max;i++){
+		        for(Integer l:listTwo){
+		            if(i<l.size()){
+		                combined.add(l.get(i));
+		            }
+		        }
+		    }
+		return combined;*/
+		 ArrayList<Integer> combine = new ArrayList<>(listOne.size() + listTwo.size());
+
+		    for(int i = 0, j = 0; i < listOne.size() || j < listTwo.size(); i++, j++) {
+		        if(i < listOne.size()) combine.add(listOne.get(i));
+		        if(j < listTwo.size()) combine.add(listTwo.get(j));
+		    }
+		    listOne.clear();
+		    listOne.addAll(combine);
+		return combine;
 	}
+	
 
 	/*
 	 Given a list of Integers representing seat numbers, group them into ranges 1-10, 11-20, and 21-30.
