@@ -1,9 +1,15 @@
 package com.techelevator;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import com.google.common.collect.Maps;
+import com.google.common.collect.Maps.EntryTransformer;
+
 
 public class Exercises {
 
@@ -269,23 +275,24 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse, Map<String, Integer> remoteWarehouse) {
-		HashMap<String, Integer> map1 = new HashMap<String, Integer>();
-		HashMap<String, Integer> map2 = new HashMap<String, Integer>();
-		HashMap<String, Integer> consolidateInventory = new HashMap<String, Integer>();
-		Map<String, Integer> combinedMap = Stream.concat(map1.entrySet().stream(), map2.entrySet().stream())
-			    .collect(Collectors.groupingBy(Map.Entry::getKey,
-			             Collectors.summingInt(Map.Entry::getValue)));
-		/*m2.forEach((k, v) -> m.merge(k, v, (v1, v2) -> v1 + v2));
-		consolidateInventory = new HashMap<>(map1);
-		for (Map.Entry<String, Integer> e : map2.entrySet())
-		    consolidateInventory.merge(e.getKey(), e.getValue(), String:: Integer);
-		//or instead of the above loop
-		map2.forEach((k, v) -> consolidateInventory.merge(k, v, String::concat));
-	*/
-	
-		return consolidateInventory(map2, map2);
+
+		Map<String, Integer> consolidateInventory = new HashMap<String, Integer>();
+		consolidateInventory.putAll(mainWarehouse);
 		
-	}
+		for(String key: remoteWarehouse.keySet()) {
+		if (consolidateInventory.containsKey(key)) {
+		int main = mainWarehouse.get(key);
+		int remote = remoteWarehouse.get(key);
+		int consolidate = main + remote;
+		consolidateInventory.replace(key, consolidate);
+		} else {
+		consolidateInventory.put(key, remoteWarehouse.get(key));
+		}
+		}
+		return consolidateInventory;
+		}
+		
+	
 
 	/*
 	 * Just when you thought it was safe to get back in the water --- last2Revisited!!!!
@@ -303,6 +310,20 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> last2Revisted(String[] words) {
-		return null;
-	}
+		Map<String, Integer> newList = new HashMap<String, Integer>();
+		
+		for (int i = 0; i < words.length; i++) {
+			String newWords = words[i];
+			int count = 0;
+			String newLast2 = newWords.substring(newWords.length() - 2);
+			for( int x = 0; x < (newWords.length() -2); x++){
+				if (newLast2.equals(newWords.substring(x, x+2))) {
+					count++;
+				}
+			}
+				newList.put(words[i], count);	
+		}			
+		return newList;
+	}	
+	
 }
