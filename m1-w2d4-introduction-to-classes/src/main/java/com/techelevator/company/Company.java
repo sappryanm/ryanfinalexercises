@@ -32,13 +32,17 @@ public class Company {
 	private int numberOfEmployees;
 	private int revenue;
 	private int expenses;
-	private int companySize;
-	private int profit;
+	//private int companySize;
+	//private int profit;
+	public void company () {
+		
+		
+	}
 	public int getName() {
 		return name;
 	}
 	public void setName(int name) {
-		this.name = name;
+		int defaultname = 0;
 	}
 	public int getNumberOfEmployees() {
 		return numberOfEmployees;
@@ -71,5 +75,5 @@ public class Company {
 		}
 	}
 	
-
+	
 }

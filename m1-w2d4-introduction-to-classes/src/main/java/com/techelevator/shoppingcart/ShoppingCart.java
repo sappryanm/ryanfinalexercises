@@ -3,14 +3,37 @@ package com.techelevator.shoppingcart;
 /**
  * This class represents a shopping cart that you can add different priced items to.  
  */
+
+
 public class ShoppingCart {
 
 	//
 	// Add any properties, along with getters and/or setters, that may be needed to implements the class methods and/or constructors.
 	//
-	
-	public ShoppingCart() {
+	private int result;
+	private double items;
+	private int cost;
+	public int getItems() {
+		return items;
+	}
 
+	public void setItems(int items) {
+		this.items = items;
+	}
+
+	public int getCost() {
+		return cost;
+	}
+
+	public void setCost(int cost) {
+		this.cost = cost;
+	}
+
+	public ShoppingCart() {
+		items = 0;
+		cost = 1;
+		
+		
 	}
 	
 	/**
@@ -20,21 +43,22 @@ public class ShoppingCart {
 	 * @param pricePerItem the price per item being added to the cart
 	 */
 	public void addItems(int numberOfItems, double pricePerItem) {
-
+			numberOfItems = getItems();
+			pricePerItem = getCost();
 	}
 	
 	/**
 	 * @return the total number of items that have been added to this cart
 	 */
 	public int getTotalNumberOfItems() {
-		return 0;
+		return result;
 	}
 	
 	/**
 	 * @return the total price of all items that have been added to the cart
 	 */
 	public double getTotalAmountOwed() {
-		return 0;
+		return 
 	}
 	
 	/**
@@ -51,6 +75,6 @@ public class ShoppingCart {
 	 * Removes all items from this cart.
 	 */
 	public void empty() {
-		
+		result = 0;
 	}
 }
