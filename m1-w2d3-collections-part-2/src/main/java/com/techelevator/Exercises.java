@@ -192,15 +192,19 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> wordCount(String[] words) {
-	/*	Map<String, Integer>  list = new HashMap<String, Integer>();
-		for( int i = 0; i < words.length; i++);{
+	/*Map<String, Integer>  list = new HashMap<String, Integer>();
+	
+		for( int i = 0; i < words.length; i++){
 			int count = 1;
-			for( int x = i + 1; x < words.length; x++); {
-				if((words[i]) == (words[x]));
+			for( int x = i + 1; x < words.length; x++) {
+				if((words[i]) == (words[x])); {
 				count ++;
-			} list.putIfAbsent(words[1], count);
+				}
+			} list.putIfAbsent(words[i], count);
 			}
-		return list; */
+		return list;
+}*/
+
 		Map<String, Integer> countTheLetter = new HashMap<String, Integer>();
 		for (String i: words) {
 		if (!countTheLetter.containsKey(i)) {

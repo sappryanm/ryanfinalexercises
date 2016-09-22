@@ -28,5 +28,48 @@ public class Company {
 	//
 	// Write your code below
 	//
+	private int name;
+	private int numberOfEmployees;
+	private int revenue;
+	private int expenses;
+	private int companySize;
+	private int profit;
+	public int getName() {
+		return name;
+	}
+	public void setName(int name) {
+		this.name = name;
+	}
+	public int getNumberOfEmployees() {
+		return numberOfEmployees;
+	}
+	public void setNumberOfEmployees(int numberOfEmployees) {
+		this.numberOfEmployees = numberOfEmployees;
+	}
+	public int getRevenue() {
+		return revenue;
+	}
+	public void setRevenue(int revenue) {
+		this.revenue = revenue;
+	}
+	public int getExpenses() {
+		return expenses;
+	}
+	public void setExpenses(int expenses) {
+		this.expenses = expenses;
+	}
+	public void isProfit(int profit){
+	    profit = revenue - expenses;
+	}
+	public void isCompanySize(String companySize) {
+		if (numberOfEmployees < 50){
+			 companySize = "small";
+		} else if (numberOfEmployees > 250) {
+			companySize = "large";
+		}else {
+			companySize = "medium";
+		}
+	}
+	
 
 }
