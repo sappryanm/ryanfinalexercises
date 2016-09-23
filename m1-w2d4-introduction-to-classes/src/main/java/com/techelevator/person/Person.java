@@ -26,41 +26,54 @@ public class Person {
 	//
 	// Write your code below
 	//
-	private String firstname;
-	private String lastname;
-	private String fullname;
+	private String firstName;
+	private String lastName;
+	private String fullName;
 	private int age;
 	
 	public Person() {
-		firstname = "John";
-		lastname = "Doe";
-		fullname = getFullname();
-		age = 0;
+//		firstname = "Ryan";
+//		lastname = "Sapp";
+//		fullname = getFullname();
+//		age = 0;
 		
 	}
 	
+
+
+	public Person(String firstName, String lastName, String fullName, int age, boolean b) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.fullName = fullName;
+		this.age = age;
+	}
+
+
+
 	public boolean adult() {
 		if(age >= 18)
 			return true;
 		return false;
 	}
-	public void fullname(String fullname) {
-		this.fullname = getFirstname() + getLastname();
+	public void fullname(String fullName) {
+		this.fullName = fullName;
 	}
 	public String getFirstname() {
-		return firstname;
+		return firstName;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstname(String firstName) {
+		this.firstName = firstName;
 	}
 	public String getLastname() {
-		return lastname;
+		return lastName;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastname(String lastName) {
+		this.lastName = lastName;
 	}
 	public String getFullname() {
-		return fullname;
+	this.fullName = firstName + lastName;
+		return fullName;
 	}
 	//public void setFullname(String fullname) {
 		//this.fullname = fullname;
