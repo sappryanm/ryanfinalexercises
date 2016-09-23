@@ -10,31 +10,21 @@ public class ShoppingCart {
 	//
 	// Add any properties, along with getters and/or setters, that may be needed to implements the class methods and/or constructors.
 	//
-	private int result;
-	private double items;
-	private int cost;
-	public int getItems() {
-		return items;
-	}
-
-	public void setItems(int items) {
-		this.items = items;
-	}
-
-	public int getCost() {
-		return cost;
-	}
-
-	public void setCost(int cost) {
-		this.cost = cost;
-	}
+	private double totalCost = 0;
+	private int numberItems = 0;
 
 	public ShoppingCart() {
-		items = 0;
-		cost = 1;
-		
-		
+
 	}
+
+	private int getNumberItems() {
+		return numberItems;
+	}
+
+	private void setNumberItems(int numberItems) {
+		this.numberItems = numberItems;
+	}
+
 	
 	/**
 	 * Adds items to the cart.
@@ -43,38 +33,41 @@ public class ShoppingCart {
 	 * @param pricePerItem the price per item being added to the cart
 	 */
 	public void addItems(int numberOfItems, double pricePerItem) {
-			numberOfItems = getItems();
-			pricePerItem = getCost();
+		this.numberItems += numberOfItems;
+		this.totalCost += numberOfItems * pricePerItem;
 	}
 	
 	/**
 	 * @return the total number of items that have been added to this cart
 	 */
 	public int getTotalNumberOfItems() {
-		return result;
+		return numberItems;
 	}
 	
 	/**
 	 * @return the total price of all items that have been added to the cart
 	 */
 	public double getTotalAmountOwed() {
-		return 
+		return  this.totalCost;
 	}
 	
 	/**
 	 * The average price of all items that have been added to the cart.  This should be equal to 
 	 * the totalAmountOwed divided by the totalNumberOfItems.
-	 * 
-	 * @return the average price of items added to the cart
 	 */
 	public double getAveragePricePerItem() {
-		return 0;
+		if (this.numberItems == 0) {
+			return 0;
+		}
+		return this.totalCost / this.numberItems;
 	}
 
 	/**
 	 * Removes all items from this cart.
 	 */
 	public void empty() {
-		result = 0;
+		this.totalCost = 0;
+		this.numberItems = 0;
+	
 	}
 }

@@ -1,6 +1,6 @@
 package com.techelevator.company;
 
-import com.techelevator.shoppingcart.ShoppingCart;
+
 
 public class CompanyTest {
 
@@ -13,13 +13,14 @@ public class CompanyTest {
 			
 			/*** totalNumberOfItems should start at zero ***/
 			 Company name = new name();
-			if(comapny.getname() != 3) {
+			if(Company.getName() = "") {
 				allTestsPassed = false;
-				System.out.println("Test FAILED: When a new cart is created, totalNumberOfItems should start at zero.");
+				System.out.println("Test FAILED: .");
 			}
 			
-			
-				System.out.println("All tests PASSED!");
+							if(allTestsPassed) {
+									System.out.println("All tests PASSED!");
+				}
 			}
 	}
 

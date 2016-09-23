@@ -28,22 +28,26 @@ public class Company {
 	//
 	// Write your code below
 	//
-	private int name;
+	private String name;
 	private int numberOfEmployees;
 	private int revenue;
 	private int expenses;
 	//private int companySize;
 	//private int profit;
-	public void company () {
-		
-		
+	public Company () {
+		//name = this.name;
+		//numberOfEmployees = 50;
+		//revenue = 0;
+		//expenses =0;
 	}
-	public int getName() {
+	
+	private String getName() {
 		return name;
 	}
-	public void setName(int name) {
-		int defaultname = 0;
+	private void setName(String name) {
+		this.name = name;
 	}
+
 	public int getNumberOfEmployees() {
 		return numberOfEmployees;
 	}
