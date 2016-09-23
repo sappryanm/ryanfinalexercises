@@ -22,11 +22,16 @@ public class Product {
 	//
     private String name;
     private double price;
+    private double weight;
 
-    public Product(String _name, double _price) {
-        name = _name;
-        price = _price;
-    }
+    public Product(String name, double price, double weight) {
+		super();
+		this.name = name;
+		this.price = price;
+		this.weight = weight;
+	}
+
+
 
     public String getName() {
     	return name;
@@ -37,5 +42,9 @@ public class Product {
     public String toString() {
     	return name + ": $"+price;
     	}
+    public double weight() {
+		return weight;
+    	
+    }
 	
 }
