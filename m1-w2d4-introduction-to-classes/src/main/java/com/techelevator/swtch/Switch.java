@@ -8,37 +8,39 @@ public class Switch {
 	//
 	// Add any properties, along with getters and/or setters, that may be needed to implements the class methods.
 	//
-
+	public boolean switchState;
+	public boolean turnOff;
 	public Switch() {
-
+		switchState = false;
 	}
 	
 	/**
 	 * Turns the switch on.
 	 */
 	public void turnOn() {
-
+		this.switchState = true;
 	}
 	
 	/**
 	 * Turns the switch off.
 	 */
 	public void turnOff() {
-
+		this.switchState = false;
 	}
 	
 	/**
 	 * @return true if the switch is currently on, otherwise false
 	 */
 	public boolean isOn() {
-		return false;
+		return switchState;
 	}
 	
 	/**
 	 * @return true if the switch is currently off, otherwise false
 	 */
 	public boolean isOff() {
-		return false;
+		turnOff = !switchState;
+		return turnOff;
 	}
 	
 }
