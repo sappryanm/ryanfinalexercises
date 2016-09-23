@@ -1,15 +1,7 @@
 package com.techelevator;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import com.google.common.collect.Maps;
-import com.google.common.collect.Maps.EntryTransformer;
-
 
 public class Exercises {
 
