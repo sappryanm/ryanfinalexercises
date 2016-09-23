@@ -28,10 +28,10 @@ public class Company {
 	//
 	// Write your code below
 	//
-	private String name;
-	private int numberOfEmployees;
-	private int revenue;
-	private int expenses;
+	public String name;
+	public int numberOfEmployees;
+	public int revenue;
+	public int expenses;
 	//private int companySize;
 	//private int profit;
 	public Company () {
@@ -41,10 +41,18 @@ public class Company {
 		//expenses =0;
 	}
 	
-	private String getName() {
+	public Company(String name, int numberOfEmployees, int revenue, int expenses) {
+		super();
+		this.name = name;
+		this.numberOfEmployees = numberOfEmployees;
+		this.revenue = revenue;
+		this.expenses = expenses;
+	}
+
+	String getName() {
 		return name;
 	}
-	private void setName(String name) {
+	void setName(String name) {
 		this.name = name;
 	}
 
@@ -78,6 +86,8 @@ public class Company {
 			companySize = "medium";
 		}
 	}
+
+
 	
 	
 }
