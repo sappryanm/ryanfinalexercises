@@ -35,9 +35,12 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"] 
 	 */
 	public List<String> array2List(String[] stringArray) {
-		List<String> stringList = Arrays.asList( stringArray );
+		//List<String> stringList = Arrays.asList( stringArray );
 
-		return stringList;
+		//return stringList;
+		List<String> newStringList;
+		newStringList = Arrays.asList(stringArray);
+		return newStringList;
 	}
 	
 	/*
@@ -63,14 +66,24 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-//		int minLength = 0;
-//	    String result = ;
-//	    String[] words = string.split("\\s+");
-//		stringArray.toString().replaceAll(char);
-		//String[] ="";
-          // int strl = stringArray.length;
+
           // List<String> strl = new ArrayList<String>();
-           List<String> list= new ArrayList<String>();
+     /*List<String> newList = new ArrayList<String>();
+		//List<String> newList = Arrays.asList( stringArray );
+     String[] stringArr = newList.toArray( new String[] {} );
+		for(String key: stringArr) {
+			
+    		 if (stringArray[stringArr].length() == 4)	{
+    			 return null;
+    		 } else {
+    			 newlist.add(stringArray[key]);
+    		 }
+    	 }
+    	 return newList;
+     
+	}*/
+		
+		 List<String> list= new ArrayList<String>();
            for (int i=0; i < stringArray.length; i++ ) {
                if (stringArray[i].length() == 4) {
                    
@@ -81,6 +94,8 @@ public class Exercises {
            }
            return list;
 	}
+		
+		
 	    	/*List<Integer> odds = new ArrayList<Integer>();
 			   for(int i = 0; i < integerArray.length; i++)
 			   {
