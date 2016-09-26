@@ -68,22 +68,21 @@ public class Exercises {
 	public List<String> no4LetterWords(String[] stringArray) {
 
           // List<String> strl = new ArrayList<String>();
-     /*List<String> newList = new ArrayList<String>();
+     List<String> newList = new ArrayList<String>();
 		//List<String> newList = Arrays.asList( stringArray );
-     String[] stringArr = newList.toArray( new String[] {} );
-		for(String key: stringArr) {
+    // String[] stringArr = newList.toArray( new String[] {} );
+	/*	
+		for(String key: newList) {
 			
-    		 if (stringArray[stringArr].length() == 4)	{
-    			 return null;
-    		 } else {
-    			 newlist.add(stringArray[key]);
+    		 if (key != 4)	{
+    			 newList.add(key);
     		 }
     	 }
     	 return newList;
      
-	}*/
+	} */
 		
-		 List<String> list= new ArrayList<String>();
+		List<String> list= new ArrayList<String>();
            for (int i=0; i < stringArray.length; i++ ) {
                if (stringArray[i].length() == 4) {
                    
@@ -94,7 +93,7 @@ public class Exercises {
            }
            return list;
 	}
-		
+	
 		
 	    	/*List<Integer> odds = new ArrayList<Integer>();
 			   for(int i = 0; i < integerArray.length; i++)
@@ -166,6 +165,13 @@ public class Exercises {
 	 arrayInt2ListDouble( {5, 8, 11, 200, 97} ) -> [2.5, 4.0, 5.5, 100, 48.5]
 	 arrayInt2ListDouble( {745, 23, 44, 9017, 6} ) -> [372.5, 11.5, 22, 4508.5, 3]
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
+	 public List<Double> arrayInt2ListDouble(int[] intArray) {
+		List<Double> doubleList = new ArrayList();
+		for (int i = 0; i < intArray.length; i++) {
+			doubleList.add(new Double(intArray[i] / 2));
+		}
+		return doubleList;
+	}
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
 		//Double empty = 0.0;
@@ -209,6 +215,15 @@ public class Exercises {
 	 findLargest( [11, 200, 43, 84, 9917, 4321, 1, 33333, 8997] ) -> 33333
 	 findLargest( [987, 1234, 9381, 731, 43718, 8932] ) -> 43718
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
+	 public Integer findLargest(List<Integer> integerList) {
+		int largestInt = 0;
+		for (Integer currentInteger : integerList) {
+			if (currentInteger > largestInt) {
+				largestInt = currentInteger;
+			}
+		}
+		return new Integer(largestInt);
+	}
 	 */ 
 	public Integer findLargest(List<Integer> integerList) {
 		ArrayList temp=new ArrayList<Integer>();
@@ -290,6 +305,28 @@ public class Exercises {
 	 fizzBuzzList( {7, 8, 9, 10, 11, 12, 13, 14, 15} )  ->  [7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"]
 	 
 	 HINT: To convert an integer x to a string you can call x.toString() in your code (e.g. if x = 1 then x.ToString() equals "1")
+	 	public List<String> fizzBuzzList(Integer[] integerArray) {
+		List<String> stringList = new ArrayList<String>();
+		boolean multipleOfThree;
+		boolean multipleOfFive;
+		for (Integer currentInteger : integerArray) {
+			multipleOfThree = currentInteger % 3 == 0;
+			multipleOfFive = currentInteger % 5 == 0;
+			if (multipleOfThree && multipleOfFive) {
+				stringList.add(new String("FizzBuzz"));
+			}
+			else if (multipleOfThree) {
+				stringList.add(new String("Fizz"));
+			}
+			else if (multipleOfFive) {
+				stringList.add(new String("Buzz"));
+			}
+			else {
+				stringList.add(currentInteger.toString());
+			}
+		}
+		return stringList;
+	}
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
 		//List<String> wordList = new ArrayList<String>(integerArray); 
@@ -299,13 +336,14 @@ public class Exercises {
 		List<String> wordList = new ArrayList<>();
 		for (int i =0; i <integerArray.length; i++) {
 		if (integerArray[i] % 5 == 0 && integerArray[i] % 3 == 0) {
-			wordList.add("FizzBuzz");
+			wordList.add(new String("FizzBuzz"));
 		} else if (integerArray[i] % 5 == 0) {
 			wordList.add("Buzz");
 		} else if (integerArray[i] % 3 == 0) {
 		wordList.add("Fizz");
 		} else {
-		wordList.add(String.valueOf(integerArray[i]));
+		//wordList.add(String.valueOf(integerArray[i]));
+		wordList.add(integerArray[i].toString());
 		}
 }
 		return wordList;
@@ -356,9 +394,9 @@ public class Exercises {
 		//List<String> distinct = new ArrayList<>();\
 		//String[] unique = new HashSet<String>(Arrays.asList(stringList)).toArray(new String[0]);
 		//List<String> wordList = Arrays.asList(); 
-		List<String> wordList = new ArrayList<String>(stringList); 
+		//List<String> wordList = new ArrayList<String>(stringList); 
 		//Set<String> mySet = new HashSet<String>(Arrays.asList(wordList)); 
-		Set<String> mySet = new HashSet<String>(wordList); 
+		Set<String> mySet = new HashSet<String>(stringList); 
 		List<String> distinct = new ArrayList<String>(mySet); 
 		//Set<String> distinct  = new HashSet<String>(stringList);
 		//return (List<String>) (distinct);
@@ -373,6 +411,25 @@ public class Exercises {
 	 Return the new list. If the lists are of unequal lengths, simply attach the remaining elements of the longer
 	 list to the new list before returning it.
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
+	 public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
+		int minListLength = Math.min(listOne.size(), listTwo.size());
+        List<Integer> output = new ArrayList<Integer>();
+        
+        for (int i = 0; i < minListLength; i++)
+        {
+            output.add(listOne.get(i));
+            output.add(listTwo.get(i));
+        }
+
+        // Add remainder Logic
+        List<Integer> longerList = (listOne.size() > listTwo.size()) ? listOne : listTwo;
+		for (int i = minListLength; i < longerList.size(); i++)
+		{
+		    output.add(longerList.get(i));
+		}
+		
+        return output;
+	}
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
 		//ArrayList<Integer> numbers = new ArrayList<Integer>();

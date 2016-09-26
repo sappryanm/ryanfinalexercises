@@ -18,7 +18,17 @@ public class Airplane {
         this.totalCoachSeats = totalCoachSeats;            
     }
 
-    /**
+    public Airplane(String planeNumber, int totalFirstClassSeats, int bookedFirstClassSeats, int totalCoachSeats,
+			int bookedCoachSeats) {
+		super();
+		this.planeNumber = planeNumber;
+		this.totalFirstClassSeats = totalFirstClassSeats;
+		this.bookedFirstClassSeats = bookedFirstClassSeats;
+		this.totalCoachSeats = totalCoachSeats;
+		this.bookedCoachSeats = bookedCoachSeats;
+	}
+
+	/**
      * 6-Character Plane Number 
      * @return planeNumber
      */
@@ -39,7 +49,7 @@ public class Airplane {
      * @return availableFirstClassSeats
      */
     public int getAvailableFirstClassSeats() {
-        return bookedFirstClassSeats;
+        return totalFirstClassSeats - bookedFirstClassSeats;
     }
 
     /**
@@ -63,7 +73,7 @@ public class Airplane {
      * @return availableCoachSeats
      */
     public int getAvailableCoachSeats() {
-        return totalCoachSeats;
+        return totalCoachSeats - bookedCoachSeats;
     }
 
     /**
@@ -80,20 +90,26 @@ public class Airplane {
      * @param totalNumberOfSeats Total number of seats to reserve
      * @return True if reservation was successful, false otherwise
      */
-    public boolean Reserve(boolean firstClass, int totalNumberOfSeats) {       
+    public boolean reserve(boolean firstClass, int totalNumberOfSeats) {       
         if (firstClass) {
-            bookedFirstClassSeats += totalNumberOfSeats;
             if (totalNumberOfSeats > getAvailableFirstClassSeats()) {
                 return false;
+            } else {
+            	bookedFirstClassSeats += totalNumberOfSeats;
             }
+            
         }
         else {
-            bookedCoachSeats += totalNumberOfSeats;
+        	
+           
             if (totalNumberOfSeats > getAvailableCoachSeats()) {
                 return false;
+            } else {
+            	 bookedCoachSeats += totalNumberOfSeats;
             }
         }
         return true;
     }
+    
 
 }
