@@ -33,7 +33,7 @@ public class AirplaneTest {
 		boolean success = ourPlane.reserve(true, 1);
 		int firstClassAvailable = ourPlane.getAvailableFirstClassSeats();
 		
-		Assert.assertTrue("We were not able to reserve a First CLass Seat", success);
+		Assert.assertTrue("We were able to reserve a First CLass Seat", success);
 		Assert.assertEquals(12, firstClassAvailable);
 		
 	}

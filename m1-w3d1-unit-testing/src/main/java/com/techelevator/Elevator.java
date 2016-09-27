@@ -5,7 +5,7 @@ public class Elevator {
 	private int shaftNumber;
     private int currentLevel;
     private int numberOfLevels;
-    private boolean doorOpen = true;
+    private boolean doorOpen;
     private boolean moving;
 
     /**
@@ -17,9 +17,21 @@ public class Elevator {
         this.shaftNumber = shaftNumber;
         this.numberOfLevels = totalNumberOfFloors;
         this.currentLevel = 1;
+        this.doorOpen = true;
+        this.moving = false;
+
     }
 
-    /**
+    public Elevator(int shaftNumber, int currentLevel, int numberOfLevels, boolean doorOpen, boolean moving) {
+		super();
+		this.shaftNumber = shaftNumber;
+		this.currentLevel = currentLevel;
+		this.numberOfLevels = numberOfLevels;
+		this.doorOpen = doorOpen;
+		this.moving = moving;
+	}
+
+	/**
      * Elevator Shaft Number 
      * @return shaftNumber
      */
@@ -62,23 +74,18 @@ public class Elevator {
     /**
      * Opens the elevator door, as long as it is not moving 
      */
-    public void OpenDoor()
-    {
-        if (!moving)
-        {
-            doorOpen = true;
-        }
-    }
+   // public void OpenDoor()
+   // {
+   //     this.doorOpen = !moving; 
+   // }
 
     /**
      * Closes the elevator door, as long as it is not moving. 
      */
-    public void CloseDoor()
+   // public void CloseDoor()
     {
-        if (!moving)
-        {
-            doorOpen = !doorOpen;
-        }
+    	//this.doorOpen = !moving && !doorOpen;
+        
     }
 
     /**
@@ -88,11 +95,12 @@ public class Elevator {
      */
     public boolean GoUp(int desiredFloor)
     {
-        currentLevel = desiredFloor;
+//        currentLevel = desiredFloor;
 
-        if (desiredFloor > currentLevel && desiredFloor <= numberOfLevels && doorOpen)
+        if (desiredFloor > currentLevel && desiredFloor <= numberOfLevels && !moving)
         {
-            return true;
+        	currentLevel = desiredFloor;
+        	return true;
         }
         else
         {
@@ -107,9 +115,11 @@ public class Elevator {
      */
     public boolean GoDown(int desiredFloor)
     {
-        if (!doorOpen && desiredFloor < currentLevel && desiredFloor > 0)
+      //  if (!doorOpen && desiredFloor < currentLevel && desiredFloor > 0)
+    	if (desiredFloor < currentLevel && desiredFloor > 0 && !moving)
         {
-            currentLevel -= desiredFloor;
+//           currentLevel -= desiredFloor;
+       	this.currentLevel = currentLevel - desiredFloor;
             return true;
         }
 
