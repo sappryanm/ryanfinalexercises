@@ -24,7 +24,7 @@ public class FruitTreeTest {
 		
 		testFruitTree.PickFruit( 10);
 		
-		Assert.assertTrue("We  can go up", );
+		//Assert.assertTrue("We  can go up", );
 		
 	}
 
