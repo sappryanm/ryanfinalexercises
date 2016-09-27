@@ -13,7 +13,14 @@ public class Television {
         return isOn;        
     }
 
-    /**
+    public Television(boolean isOn, int selectedChannel, int currentVolume) {
+		
+		this.isOn = isOn;
+		this.selectedChannel = 5;
+		this.currentVolume = 3;
+	}
+
+	/**
      * Current selected channel number for the tv. Channels are 3 to 18.
      */
     public int getSelectedChannel() {
