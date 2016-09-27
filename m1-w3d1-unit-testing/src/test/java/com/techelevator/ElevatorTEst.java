@@ -103,6 +103,11 @@ public class ElevatorTEst {
 		boolean success = ourElevator3.GoDown(2) ;
 		Assert.assertFalse("We  can not go go down with door open and moving", success);	
 	}
+	public void testing_going_down_door_condtitions_moving_null() {
+		Elevator ourElevator3 = new Elevator(4, 1, 10, false, true);
+		boolean success = ourElevator3.GoDown(2) ;
+		Assert.assertFalse("We  can not go go down with door open and moving", success);	
+	}
 	
 	            @Test
 	            public void getters_setters_test(){

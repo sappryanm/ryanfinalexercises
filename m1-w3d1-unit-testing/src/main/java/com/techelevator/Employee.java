@@ -15,13 +15,18 @@ public class Employee {
      * @param lastName
      * @param salary
      */
-    public Employee(int employeeId, String firstName, String lastName, double salary) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.annualSalary = salary;
-    }
 
-    /**
+
+    public Employee(int employeeId, String firstName, String lastName, double annualSalary) {
+		super();
+		this.employeeId = employeeId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		//this.department = department;
+		this.annualSalary = annualSalary;
+	}
+
+	/**
      * Employee Id
      * @return employeeId
      */
