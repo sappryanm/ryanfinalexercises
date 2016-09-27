@@ -67,12 +67,17 @@ public class ElevatorTEst {
 		//Assert.assertEquals(2, downDesiredFloor);
 		boolean success = ourElevator.GoUp(2);
 		Assert.assertTrue("We  can go up", success);
-		
-		
+	}
+		@Test
+		public void open_door_check_go_down(){
+			Elevator ourElevator6 = new Elevator(3, 10, 4, false, true);
+		ourElevator6.GoUp(1);
+		boolean down = ourElevator6.GoDown(1);
+		Assert.assertFalse("Elevator went down while door was open", down);             	
 	}
 	@Test
 	public void testing_going_up_not_enough_floors() {
-		Elevator elevatorTest2 = new Elevator( 2, 2, 3, true, false);
+	Elevator elevatorTest2 = new Elevator( 2, 5, 3, true, false);
 	boolean success = elevatorTest2.GoUp(2);
 	Assert.assertFalse("We  can not go up", success);
 	

@@ -17,6 +17,7 @@ public class SmartPhone {
     {
         this.phoneNumber = phoneNumber;
         this.carrier = carrier;
+      this.operatingSystem = "android";
     }
 
     /**
