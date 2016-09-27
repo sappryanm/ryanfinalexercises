@@ -7,12 +7,19 @@ import org.junit.Test;
 public class SmartPhoneTest {
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 	}
 
+	public static void main(String[] args) {
+		SmartPHone myPhone = new SmartPhone(); 
+		myPhone.displayMessage();
+		myPhone.PhoneMaker();
+		myPhone.phoneSpecs();
+		System.out.println("test");
+
+}
 	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-
+	public void SmartPhone_test() { 
+		assert 'dialing 555-1234' == sp.dial('555-1234') 
+				}
 }
