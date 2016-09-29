@@ -69,5 +69,23 @@ public class DollarAmount {
     public int hashCode() {
     	return totalAmountInCents;
     }
+    /*@Override
+    public String toString() {
+    	this.totalAmountInCents = DollarAmount
+		return totalAmountInCents;
+	}
+	*/
+   /* @Override
+   
+    public String toString()
+    {
+      return String.format("%d.%02d", getDollars(), getCents());
+    }*/
+    @Override
+    public String toString() {
+    String dollarAmount = getDollars() + "." + getCents();
+    return ("$" + dollarAmount) ;
+    }
+    
     
 }

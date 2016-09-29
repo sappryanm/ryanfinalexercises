@@ -11,7 +11,7 @@ public class PartsList implements Iterable<Product>  {
 
 	  public void ProductList(List<Product> products) {
 		    this.products = products == null ? new ArrayList<Product>() : new ArrayList<>(products);
-		    initializeLastId();
+		    initializeLastId(); /// Check for null becauee I read that is good pratice and new arraylist of products
 		  }
 
 	  private void initializeLastId() {
