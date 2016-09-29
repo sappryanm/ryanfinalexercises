@@ -4,8 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TelevisionTest {
-	private Television tv;
+public class TelevisionTest2 {
+	private Television2 tv;
 	@Before
 	public void setUp() {
 		tv = new Television(true, 5, 3);
@@ -104,6 +104,7 @@ public class TelevisionTest {
 		Television tvVolume = new Television(true, 5, 1);
 		tvVolume.LowerVolume();
 		int currentVolume = tvVolume.isCurrentVolume();
+		Assert.assertFalse("Eleveator went above poosible level", success);
 		Assert.assertEquals(1, currentVolume);
 		//Assert.assertEquals(9, newChannel);
 		

@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class Television {
+public class Television2 {
 
     private boolean isOn;
     private int selectedChannel = 3;
