@@ -4,9 +4,9 @@ public class BankAccount {
 
 	BankCustomer accountHolderName; 
 	String accountNumber;
-	BankCustomer addresss;
-	BankCustomer phone;
-	BankCusomter name;
+	String addresss;
+	String phone;
+
 	protected DollarAmount balance;
 	//this is the constructor
 	public BankAccount (BankCustomer accountHolderName, String accountNumber) {
@@ -18,13 +18,13 @@ public class BankAccount {
 	}
 
 	public BankAccount(BankCustomer accountHolderName, String accountNumber, String addresss, String phone,
-			String name) {
+			BankCustomer name) {
 		super();
 		this.accountHolderName = accountHolderName;
 		this.accountNumber = accountNumber;
 		this.addresss = addresss;
 		this.phone = phone;
-		this.name = name;
+
 	}
 
 	public DollarAmount getBalance() {
@@ -33,18 +33,18 @@ public class BankAccount {
 	//first method
 	//DollarAmount getBalance()
 	//This method returns the current balance.
-	public BankCustomer getname(BankCustomer name) {
-		BankCustomer customerName = BankCustomer.setName(null);
-		return customerName;
-	}
-	public BankCustomer getphone(BankCustomer phone) {
-		BankCustomer phoneNumber = BankCustomer.getPhone();
-		return phoneNumber;
-	}
-	public BankCustomer getAddresss(BankCustomer addresss) {
-		BankCustomer address = BankCustomer.getAddress();
-		return address;
-	}
+//	public String getname(BankAccount accountHolderName) {
+		//BankCustomer customerName = BankCustomer.setName(null);
+//		return accountHolderName;
+//	}
+//	public BankCustomer getphone(BankCustomer phone) {
+//		BankCustomer phoneNumber = BankCustomer.getPhone();
+//		return phoneNumber;
+//	}
+//	public BankCustomer getAddresss(BankCustomer addresss) {
+//		BankCustomer address = BankCustomer.getAddress();
+//		return address;
+//	}
 
 	public DollarAmount deposit(DollarAmount amountToDeposit) {
 	    balance = balance.plus(amountToDeposit);

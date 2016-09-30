@@ -4,38 +4,44 @@ package com.techelevator;
 //import java.util.Properties;
 
 public class BankCustomer {
-	private static String address;
+	private  String address;
 	private String phone;
-	private static String name;
+	private BankAccount accountNumber;
+	private String accountHolderName;
 
-	
-	public BankCustomer(BankCustomer address, BankCustomer phone, BankCustomer name) {
+	public BankCustomer(String address, String phone, BankAccount accountNumber, String accountHolderName) {
 		//super();
 		this.address = address;
 		this.address = phone;
-		this.name = name;
+		this.accountHolderName = accountHolderName;
 	}
-	public static BankCustomer getAddress() {
+	public  String getAddress() {
 		return address;
 	}
-	public void setAddress(BankCustomer address) {
-		this.address = address;
+//	public void setAddress(String address) {
+//		this.address = address;
+//	}
+	public  String getPhone() {
+		return phone;
 	}
-	public static BankCustomer getPhone() {
-		return getPhone();
+//	public void setPhone(String phone) {
+//		this.address = phone;
+//	}
+	public String getName(String accountHolderName) {
+		return accountHolderName;
 	}
-	public void setPhone(BankCustomer phone) {
-		this.address = phone;
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+	//public static BankCustomer getAddress(BankCustomer address) {
+	public BankAccount getAccountNumber() {
+		return accountNumber;
 	}
-	public static BankCustomer getName(BankCustomer fullName) {
-		return name;
+	public void setAccountNumber(BankAccount accountNumber) {
+		this.accountNumber = accountNumber;
 	}
-	public void setName(BankCustomer name) {
-		this.name = name;
-	}
-	public static BankCustomer getAddress(BankCustomer address) {
 	
-		return null;
-	}
+		//return null;
+	//}
 	
 }
