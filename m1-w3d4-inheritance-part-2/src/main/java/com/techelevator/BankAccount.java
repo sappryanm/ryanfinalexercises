@@ -1,31 +1,34 @@
 package com.techelevator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BankAccount {
 
-	BankCustomer accountHolderName; 
+	BankCustomer accountHolder; 
 	String accountNumber;
-	String addresss;
-	String phone;
+	//
+//	String addresss;
+
 
 	protected DollarAmount balance;
 	//this is the constructor
-	public BankAccount (BankCustomer accountHolderName, String accountNumber) {
+	public BankAccount (BankCustomer accountHolder, String accountNumber) {
 	   // this.accountHolderName = BankCustomer.getAddress(accountHolderName);
 		
 		this.accountNumber = accountNumber;
 	    this.balance = new DollarAmount(0);
+	    //this.accounts =  new ArrayList<BankAccount>();
 	    //account starts at zero dollars        
+	    accountHolder.addAccount(this);
 	}
 
-	public BankAccount(BankCustomer accountHolderName, String accountNumber, String addresss, String phone,
-			BankCustomer name) {
-		super();
-		this.accountHolderName = accountHolderName;
-		this.accountNumber = accountNumber;
-		this.addresss = addresss;
-		this.phone = phone;
+	
+	
 
-	}
+//		BankCustomer accountHolderName ="John";
+		
+	
 
 	public DollarAmount getBalance() {
 	    return balance;
@@ -70,6 +73,8 @@ public class BankAccount {
 	//public void fee(DollarAmount feeAmount) {
 	  //  this.withdrawal(feeAmount);
 	//}
+
+	
 
 	}
 	    

@@ -1,14 +1,12 @@
 package com.techelevator;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+
 
 public class Checking extends BankAccount {
 	//protected DollarAmount fee;
 	//private int transactionCount;
 
-	public Checking(String accountHolderName, String accountNumber) {
+	public Checking(BankCustomer accountHolderName, String accountNumber) {
 		super(accountHolderName, accountNumber);
 		this.balance = new DollarAmount(0);
 	

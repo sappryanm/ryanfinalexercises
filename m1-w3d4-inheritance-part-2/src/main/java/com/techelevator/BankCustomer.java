@@ -1,45 +1,61 @@
 package com.techelevator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //import java.io.FileInputStream;
 //import java.util.Properties;
 
 public class BankCustomer {
 	private  String address;
 	private String phone;
-	private BankAccount accountNumber;
-	private String accountHolderName;
+	List<BankAccount> accounts;
+	
+	private String name;
 
-	public BankCustomer(String address, String phone, BankAccount accountNumber, String accountHolderName) {
+	public BankCustomer(String address, String phone, String name) {
 		//super();
 		this.address = address;
 		this.address = phone;
-		this.accountHolderName = accountHolderName;
+		this.name = name;
+		this.accounts =  new ArrayList<BankAccount>();
 	}
+	public boolean isVip() {
+		DollarAmount sum = new DollarAmount(0);
+		for(BankAccount account : accounts) {
+			sum = sum.plus(account.getBalance());
+		}
+		if (sum.isGreaterThanOrEqualTo(new DollarAmount (250000))) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public void addAccount(BankAccount account){
+		accounts.add(account);
+	
+	}	
+	public void removeAccount(BankAccount account) {
+		accounts.remove(account);
+	}
+	 public List<BankAccount> getAccounts() {
+		 return accounts;
+	 }
+	 
+	 
 	public  String getAddress() {
 		return address;
 	}
-//	public void setAddress(String address) {
-//		this.address = address;
-//	}
+
 	public  String getPhone() {
 		return phone;
 	}
-//	public void setPhone(String phone) {
-//		this.address = phone;
-//	}
-	public String getName(String accountHolderName) {
-		return accountHolderName;
+
+	public String getName() {
+		return name;
 	}
-//	public void setName(String name) {
-//		this.name = name;
-//	}
-	//public static BankCustomer getAddress(BankCustomer address) {
-	public BankAccount getAccountNumber() {
-		return accountNumber;
-	}
-	public void setAccountNumber(BankAccount accountNumber) {
-		this.accountNumber = accountNumber;
-	}
+
 	
 		//return null;
 	//}

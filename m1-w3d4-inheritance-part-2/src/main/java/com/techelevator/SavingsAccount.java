@@ -1,13 +1,14 @@
 package com.techelevator;
 
 public class SavingsAccount extends BankAccount {
-
 	
-    public SavingsAccount(String accountHolderName, String accountNumber) {
+	
+    public SavingsAccount(BankCustomer accountHolderName, String accountNumber) {
 		super(accountHolderName, accountNumber);
 	this.balance = new DollarAmount(0);
 	
     }
+ 
     @Override
 	public DollarAmount withdrawal(DollarAmount amountToWithdrawl) {
 	//	result = testCondition ? value1 : value2
