@@ -75,17 +75,18 @@ public class DollarAmount {
 		return totalAmountInCents;
 	}
 	*/
-   /* @Override
+    @Override
    
     public String toString()
     {
-      return String.format("%d.%02d", getDollars(), getCents());
-    }*/
+      return String.format("$%d.%d", getDollars(), getCents());
+    }
+    /*
     @Override
     public String toString() {
     String dollarAmount = getDollars() + "." + getCents();
     return ("$" + dollarAmount) ;
     }
-    
+    */
     
 }
