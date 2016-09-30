@@ -2,15 +2,29 @@ package com.techelevator;
 
 public class BankAccount {
 
-	String accountHolderName; 
+	BankCustomer accountHolderName; 
 	String accountNumber;
+	BankCustomer addresss;
+	BankCustomer phone;
+	BankCusomter name;
 	protected DollarAmount balance;
 	//this is the constructor
-	public BankAccount (String accountHolderName, String accountNumber) {
-	    this.accountHolderName = accountHolderName;
-	    this.accountNumber = accountNumber;
+	public BankAccount (BankCustomer accountHolderName, String accountNumber) {
+	   // this.accountHolderName = BankCustomer.getAddress(accountHolderName);
+		
+		this.accountNumber = accountNumber;
 	    this.balance = new DollarAmount(0);
 	    //account starts at zero dollars        
+	}
+
+	public BankAccount(BankCustomer accountHolderName, String accountNumber, String addresss, String phone,
+			String name) {
+		super();
+		this.accountHolderName = accountHolderName;
+		this.accountNumber = accountNumber;
+		this.addresss = addresss;
+		this.phone = phone;
+		this.name = name;
 	}
 
 	public DollarAmount getBalance() {
@@ -19,6 +33,18 @@ public class BankAccount {
 	//first method
 	//DollarAmount getBalance()
 	//This method returns the current balance.
+	public BankCustomer getname(BankCustomer name) {
+		BankCustomer customerName = BankCustomer.setName(null);
+		return customerName;
+	}
+	public BankCustomer getphone(BankCustomer phone) {
+		BankCustomer phoneNumber = BankCustomer.getPhone();
+		return phoneNumber;
+	}
+	public BankCustomer getAddresss(BankCustomer addresss) {
+		BankCustomer address = BankCustomer.getAddress();
+		return address;
+	}
 
 	public DollarAmount deposit(DollarAmount amountToDeposit) {
 	    balance = balance.plus(amountToDeposit);
