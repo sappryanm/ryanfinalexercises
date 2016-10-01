@@ -6,8 +6,8 @@ public class Checking extends BankAccount {
 	//protected DollarAmount fee;
 	//private int transactionCount;
 
-	public Checking(BankCustomer accountHolderName, String accountNumber) {
-		super(accountHolderName, accountNumber);
+	public Checking(BankCustomer accountHolder, String accountNumber) {
+		super(accountHolder, accountNumber);
 		this.balance = new DollarAmount(0);
 	
 	   
@@ -15,6 +15,21 @@ public class Checking extends BankAccount {
 	    
 	  
 	}
+	@Override
+	public DollarAmount withdrawal(DollarAmount amountToWithdrawal) { 
+	    if((balance.minus(amountToWithdrawal)).isLessThanOrEqualTo(new DollarAmount (-10000))) { 
+	        return balance;
+	    }else if (balance.minus(amountToWithdrawal).isLessThan(new DollarAmount(0))) {
+	        balance= balance.minus(amountToWithdrawal);
+	        balance=balance.minus(new DollarAmount(1000));
+	        return balance;
+	    } else {
+	        balance= balance.minus(amountToWithdrawal);
+	        return balance; 
+	    }
+	}
+}
+	/*
 	@Override
 	    public DollarAmount withdrawal(DollarAmount amountToWithdrawl) {
 	   return this.balance = (((balance.minus(amountToWithdrawl)).isLessThanOrEqualTo(new DollarAmount (-10000)) &&
@@ -47,4 +62,4 @@ public class Checking extends BankAccount {
 
 	
 
-}
+

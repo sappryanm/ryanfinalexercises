@@ -88,6 +88,18 @@ public class DollarAmountTest {
 		Assert.assertTrue("not True", dollarCents);
 }
 	@Test
+	public void test_compareTo_7(){
+	DollarAmount dollarTest7 = new DollarAmount(1899);
+		boolean dollarCents = dollarTest7.isGreaterThanOrEqualTo(dollarTest);
+		Assert.assertFalse("not True", dollarCents);
+}
+	@Test
+	public void test_compareTo_7_2(){
+	DollarAmount dollarTest7 = new DollarAmount(1899);
+		boolean dollarCents = dollarTest7.isGreaterThanOrEqualTo(dollarTest);
+		Assert.assertFalse("not True", dollarCents);
+}
+	@Test
 	public void test_compareTo8(){
 		DollarAmount dollarTest10 = new DollarAmount(2655);
 		boolean dollarCompare = dollarTest.isLessThanOrEqualTo(dollarTest10);
@@ -143,6 +155,18 @@ public class DollarAmountTest {
 		//Assert.assertEquals("$26.55",  );
 		//Assert.assertTrue("Not Equal", success);
 	}
+	@Test
+	public void test_compareTo_7_3(){
+	DollarAmount dollarTest7 = new DollarAmount(2655);
+		boolean dollarCents = dollarTest7.equals(dollarTest);
+		Assert.assertTrue("not True", dollarCents);
+}
+	@Test
+	public void test_compareTo_7_4(){
+	DollarAmount dollarTest7 = new DollarAmount(0);
+		boolean dollarCents = dollarTest.equals(dollarTest7);
+		Assert.assertFalse("not True", dollarCents);
+}
 	@Test
 	public void test_equals1branch(){
 		
