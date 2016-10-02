@@ -3,12 +3,12 @@ package com.techelevator;
 public class SavingsAccount extends BankAccount {
 	
 	
-    public SavingsAccount(BankCustomer accountHolderName, String accountNumber) {
-		super(accountHolderName, accountNumber);
+    public SavingsAccount(BankCustomer accountHolder, String accountNumber) {
+		super(accountHolder, accountNumber);
 	this.balance = new DollarAmount(0);
 	
     }
- 
+ /*
     @Override
 	public DollarAmount withdrawal(DollarAmount amountToWithdrawl) {
 	//	result = testCondition ? value1 : value2
@@ -17,7 +17,7 @@ public class SavingsAccount extends BankAccount {
 				(balance=balance.minus((new DollarAmount(200)))) :
 					(balance= balance.minus(new DollarAmount(0)))));
    }
-	
+	*/
 
 	/*
 	public void setServiceCharge() {
@@ -25,7 +25,7 @@ public class SavingsAccount extends BankAccount {
 		
 	}
 	*/
-	/*
+	
 	@Override
 	public DollarAmount withdrawal(DollarAmount amountToWithdrawl) { 
 	    if((balance.minus(amountToWithdrawl)).isLessThanOrEqualTo(new DollarAmount (0))) { 
@@ -39,7 +39,7 @@ public class SavingsAccount extends BankAccount {
 	        return balance; 
 	    }
 
-   */
+	}
 //        int fee= -2
 //        deposit(fee);
     

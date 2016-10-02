@@ -16,7 +16,7 @@ public class BankCustomer {
 	public BankCustomer(String address, String phone, String name) {
 		//super();
 		this.address = address;
-		this.address = phone;
+		this.phone = phone;
 		this.name = name;
 		this.accounts =  new ArrayList<BankAccount>();
 	}
