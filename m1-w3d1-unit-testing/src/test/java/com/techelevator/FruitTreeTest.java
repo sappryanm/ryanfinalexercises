@@ -39,8 +39,21 @@ public class FruitTreeTest {
     Assert.assertEquals("apple", successFirstName);
   //  boolean successPickFruit = employeeTest.PickFruit();
     //Assert.assertFalse("Doors Closed and Moving", successMoving);  
+	 }
+    @Test
+    public void test_no_fruit_on_Tree() {
+    	 FruitTree noFruitTree = new FruitTree("apple", 0);
+    	 boolean pickFruit = noFruitTree.PickFruit(0);
+    	 Assert.assertFalse(pickFruit);
+    }
+    @Test
+    public void test_no_fruit_on_Tree2() {
+    	 FruitTree FruitTree = new FruitTree("apples", 3);
+    	 boolean pickFruit2 = FruitTree.PickFruit(4);
+    	 Assert.assertTrue(pickFruit2);
+    }
 } 
-}
+
 	
 	
 
