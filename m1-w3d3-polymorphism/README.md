@@ -1,37 +1,5 @@
-# Polymorphism Exercises
+#
 
-In order to practice applying polymorphism, your task is to create interface definitions and class implementations for the exercises defined below. In any of the cases, you may add attributes (i.e. properties) and other supporting methods to the classes in order to fully implement the interface.
-
-Each implementation class requires unit tests to verify its correctness.
-
-
-## Postage
- 
-#### DeliveryDriver Interface
-
-calculateRate( distance, weight)
-    
-#### Implementing Classes
-
-##### Postal Service
-
-The Postal Service "is-a" DeliveryDriver and bases the rate upon weight in ounces up to 1 pound, in pounds beginning with 16 ounces or greater
-
-    |--------|-----------|-----------|-----------|
-    |        | 1st Class | 2nd Class | 3rd Class |
-    | Ounces | Per Mile  | Per Mile  | Per Mile  |
-    |--------|-----------|-----------|-----------|
-    | 0 - 2  |   0.035   |   0.0035  |   0.0020  |
-    | 3 - 8  |   0.040   |   0.0040  |   0.0022  |
-    | 9 - 15 |   0.047   |   0.0047  |   0.0024  |
-    | Pounds |           |           |           |
-    | 1 - 3  |   0.195   |   0.0195  |   0.0150  |
-    | 4 - 8  |   0.450   |   0.0450  |   0.0160  |
-    | 9+     |   0.500   |   0.0500  |   0.0170  |
-    |--------|-----------|-----------|-----------|
-
-
-    rate = per mile rate * distance
 
 ##### FexEd
 

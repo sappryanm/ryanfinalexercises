@@ -1,16 +1,28 @@
 package com.techelevator;
 
-public interface DeliveryDriver {
-	private int someInt;
-	private String someString;
+
+public class DeliveryDriver {
+	protected double rate;
+	protected double charges;
+	protected double weight;
 	
-	public DeliveryMetho(int intValue, Strong stringValue)
-	this.someInt
-	this.someString
+	public DeliveryDriver(double rate, double charges){
+		this.rate = rate;
+		this.charges = charges;
+		this.weight = weight;
+	}
 	
-	public int getINt()
-	return someInt
-			public String
-			return someString
+
+
+	public double getRate() {
+		return rate;
+	}
+	public double getCharges() {
+		return charges;
+	}
+	public double getWeight() {
+		return weight;
+	}
+			
 
 }
