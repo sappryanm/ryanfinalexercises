@@ -19,8 +19,25 @@ public class QuizRunner {
 			ClassLoader classLoader = getClass().getClassLoader();
 			File quizFile = new File(classLoader.getResource(fileName).getFile());
 		
+			
+			
 			FileReader fileReader;
 			fileReader = new FileReader(quizFile);
+			
+//			char[] buffer = new char[1024];
+//			int charRead = fileReader.read(buffer);
+//			<String> stringList = new ArrayList<String>;
+//		
+//			
+//			while(charRead > 0) {
+//			
+//				
+//				for(int i = 0; i <charRead; i++) {
+//					if (buffer[i] == "")
+//				}
+//			}
+			
+			
 			reader = new BufferedReader(fileReader);
 			scanner = new Scanner(System.in);
 			
