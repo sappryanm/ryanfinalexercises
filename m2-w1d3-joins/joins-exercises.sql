@@ -2,6 +2,35 @@
 
 -- 1. All of the films that Nick Stallone has appeared in
 --    Rows: 30
+SELECT title
+FROM film
+WHERE film_id IN (
+	SELECT film_id
+	FROM film_actor
+	WHERE actor_id =(
+		SELECT actor_id
+		FROM actor
+		WHERE first_name = 'NICK' AND last_name = 'STALLONE'));
+
+SELECT title
+FROM film
+INNER JOIN film_actor fa
+ON film.film_id = fa.film_id
+INNER JOIN actor
+ON fa.actor_id = actor.actor_id
+WHERE actor.first_name = 'NICK' AND actor.last_name = 'STALLONE';
+
+
+SELECT title
+FROM film
+INNER JOIN film_actor fa
+ON film.film_id = fa.film_id
+INNER JOIN actor
+ON fa.actor_id = actor.actor_id
+WHERE actor_id =(
+	SELECT actor_id
+	FROM actor
+	WHERE first_name = 'NICK' AND last_name = 'STALLONE'));
 
 -- 2. All of the films that Rita Reynolds has appeared in
 --    Rows: 20
