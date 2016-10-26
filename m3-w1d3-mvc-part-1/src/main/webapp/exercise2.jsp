@@ -43,15 +43,18 @@ public static int fibonacci2(int number){ if(number == 1 || number == 2){ return
 
 
 			 --%>
-		<c:set var='fib1' value="1"/>
-		<c:set var="fib2" value="2" />
-					
-		<c:forEach begin="1" end="25" var="index">	
+		<c:set var='fib1' value="0"/>
+		<c:set var="fib2" value="1" />
+		 <c:set var="fib" value="${fib1 + fib2}" />			
+		<c:forEach begin="0" end="25" var="index">	
+		<%-- 
 		<li>${fib1}</li>
 		<li>${fib2}</li>
-		<c:set var='fib1' value="${fib1 + fib2}"/>
-		<c:set var="fib2" value="${fib1 + fib2}" />
-		
+		 --%>
+		 <li> ${fib}</li>
+		<c:set var='fib' value="${fib1 + fib2}"/>
+		<c:set var="fib1" value="${fib2}" />
+		<c:set var="fib2" value="${fib}" />
 		
 
 		</c:forEach>

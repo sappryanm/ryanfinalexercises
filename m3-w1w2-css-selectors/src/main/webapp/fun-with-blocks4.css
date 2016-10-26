@@ -4,8 +4,8 @@ html {
 
 }
 .box {
-  padding: 28px;
-  width: 5%;
+  padding: 20px;
+  width: 50px;
 
   margin:0px;
 
@@ -16,30 +16,48 @@ html {
 .even {
   background-color: #44accf;
 }
+.row:before, .row:after { content: "";
+                          display: table;
+}
+
 #box_0 {
 	margin-left: 50%;
 
 }
 #box_1 {
 	margin-left: 45%;
-
+    float: left;
+    display:inline;
 }
 #box_2 {
-	margin-left: 55%;
+        float: left;
+        display:inline;
 
 }#box_3 {
 	margin-left: 40%;
+	float: left;
+    display: block;
 }#box_4 {
-	margin-left: 45%;
+	float: left;
+	display: inline;
 }#box_5 {
-	margin-left: 50%;
+
+	float: left;
+	display: inline;
 }#box_6 {
-	margin-left: 40%;
+	margin-left: 35%;
+	float: left;
+    display:block;
 }#box_7 {
-	margin-left: 30%;
+	float: left;
+	display: inline;
 }#box_8 {
-	margin-left: 20%;
-}
+	float: left;
+	display: inline;
+
+
 }#box_9 {
-	margin-left: 10%;
+    display: inline;
+	float: left;
+
 }
