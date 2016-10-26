@@ -1,0 +1,45 @@
+html {
+  font: 50px Courier;
+  color: white;
+
+}
+.box {
+  padding: 28px;
+  width: 5%;
+
+  margin:0px;
+
+}
+.odd {
+  background-color: #ee3e64;
+}
+.even {
+  background-color: #44accf;
+}
+#box_0 {
+	margin-left: 50%;
+
+}
+#box_1 {
+	margin-left: 45%;
+
+}
+#box_2 {
+	margin-left: 55%;
+
+}#box_3 {
+	margin-left: 40%;
+}#box_4 {
+	margin-left: 45%;
+}#box_5 {
+	margin-left: 50%;
+}#box_6 {
+	margin-left: 40%;
+}#box_7 {
+	margin-left: 30%;
+}#box_8 {
+	margin-left: 20%;
+}
+}#box_9 {
+	margin-left: 10%;
+}
