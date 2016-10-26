@@ -23,7 +23,15 @@
 			item should be decreased by 1.
 			 
 			See exercise3-echo.png for example output
+			
 		 --%>
+		 
+		 <c:forEach begin="0" end="${param.count}" var="index">
+		 <li style="font-size:${param.count - index}px"> ${param.word} 
+		 </li>
+		 </c:forEach>
+		 
+		 
 		</ul>
 		
 	</body>
