@@ -44,7 +44,39 @@ nav li a {
 nav li a:hover {
 	text-decoration: underline;
 }
-
+img {
+    max-width: 300px;
+    height: auto;
+}
+.stars {
+	display:block;
+	margin-left: 35%;
+	align-content: center;
+	height: 20px;
+	width: 80px; 
+}
+#starBottom {
+	position: fixed;
+	bottom:0;
+	left: 35;
+	height: 20px;
+	width: 80px; 
+}
+.productName {
+	font-weight: bold;
+	
+}
+#price {
+	color: #ff0000;
+	font-weight:bold
+}
+#bestSeller {
+	color: #ff0000;
+}
+.container{
+	
+	column-count: 3;
+}
 section {
 	clear: both;
 	display: block;
@@ -55,4 +87,52 @@ section {
 	min-height: 450px;
 	background-color: #FFF;
 	border-radius: 7px;
+}
+.productList {
+	
+	background:#f5edb5;
+	width:300px;
+	margin-left: 20px;
+}
+.column {
+	display:block;
+	margin: 0px 20px;
+
+	width:300px;
+	min-height: 330px;
+	align-content: center;
+}
+
+
+.stars.t {
+	left: 50px;
+}
+li {
+	list-style-type: none;
+}
+p {
+	display:inline;
+	text-align:right;
+}
+.lowStockStyle {
+	color: blue;
+	font-weight: bold;
+}
+table {
+    margin-left: 50px;
+}
+th, td {
+ 
+}
+td {
+    height: 40px;
+    vertical-align: bottom;
+}
+
+th {
+    height: 50px;
+}
+tr:nth-child(odd) {background-color: #f2f2f2}
+td.headers {
+	background-color: #ffffff;
 }

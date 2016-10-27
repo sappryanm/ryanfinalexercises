@@ -24,6 +24,7 @@
   	<!-- Every servlet container (i.e. Tomcat) has a servlet with the name "default" -->
   	<servlet-name>default</servlet-name> 
   	<!-- We want the default servlet to handle all requests for static resources -->
+  	<url-pattern>*.html</url-pattern>
   	<url-pattern>*.css</url-pattern>
   	<url-pattern>*.js</url-pattern>
   	<url-pattern>*.png</url-pattern>
