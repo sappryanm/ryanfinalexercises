@@ -21,7 +21,7 @@
     </nav>
     <section id="main-content">
 	<h1>Toy Department</h1>
-	<p> Product Tile View </p>
+	<p> Product List View </p>
 
 	<c:forEach var="products" items="${productList}">
 			<div id="listViewPictures">

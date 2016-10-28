@@ -138,6 +138,10 @@ table {
 #listborder {
  	border-bottom: 1px solid #ddd;
 }
+td > img {
+	width: 100px;
+	height: auto;
+}
 td {
     height: 20px;
     vertical-align: bottom;
