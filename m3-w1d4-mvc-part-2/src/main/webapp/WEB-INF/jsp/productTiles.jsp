@@ -14,8 +14,10 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#">Product List View</a></li>
-            <li><a href="#">Product Table</a></li>
+           <c:url var="productTable" value="/productTable"></c:url>
+			<li><a href="${productTable}"> Product Table</a><li>
+           <c:url var="productListpage" value="/productList"></c:url>
+			<li><a href="${productListpage}"> Product List</a><li>
         </ul>
         
     </nav>

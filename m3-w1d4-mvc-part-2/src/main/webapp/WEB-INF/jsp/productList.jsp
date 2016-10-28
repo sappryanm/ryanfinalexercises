@@ -6,7 +6,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Product List View</title>
-    <link rel="stylesheet" href="css/site.css" />
+<!--     <link rel="stylesheet" href="css/site.css" /> -->
+    <c:url var="cssHref" value="/css/site.css" />
+	<link type="text/css" rel="stylesheet" href="${cssHref}" />
 </head>
 <body>
     <header>
@@ -14,14 +16,18 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
+        	<c:url var="productTable" value="/productTable"></c:url>
+			<li><a href="${productTable}"> Product Table</a><li>
+            <c:url var="productTiles" value="/productTiles"></c:url>
+			<li><a href="productTiles"> Product Tiles</a></li>
         </ul>
         
     </nav>
     <section id="main-content">
 	<h1>Toy Department</h1>
 	<p> Product List View </p>
+	<c:url var="homeHref" value="/"></c:url>
+				<a href="${homeHref}"> Return to Homepage </a>
 
 	<c:forEach var="products" items="${productList}">
 			<div id="listViewPictures">
