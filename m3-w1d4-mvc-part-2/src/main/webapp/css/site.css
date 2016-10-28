@@ -21,7 +21,9 @@ nav {
 	padding: 5px;
 	height: 50px;
 }
-
+.hline { width:100%; 
+	height: 2px; 
+	background: #949494; }
 nav ul {
 	float: left;
 }
@@ -73,6 +75,11 @@ img {
 #bestSeller {
 	color: #ff0000;
 }
+#listViewPictures {
+	float: left;
+	width:150;
+	margin 20px;
+}
 .container{
 	
 	column-count: 3;
@@ -88,7 +95,7 @@ section {
 	background-color: #FFF;
 	border-radius: 7px;
 }
-.productList {
+.productlist {
 	
 	background:#f5edb5;
 	width:300px;
@@ -118,21 +125,28 @@ p {
 	color: blue;
 	font-weight: bold;
 }
+#listViewPictures {
+}
+.productlist {
+	display:inline;
+	background:white;
+	margin-left: 50px;
+}
 table {
     margin-left: 50px;
 }
-th, td {
- 
+#listborder {
+ 	border-bottom: 1px solid #ddd;
 }
 td {
-    height: 40px;
+    height: 20px;
     vertical-align: bottom;
 }
 
 th {
     height: 50px;
 }
-tr:nth-child(odd) {background-color: #f2f2f2}
+table.view > tr:nth-child(odd) {background-color: #f2f2f2}
 td.headers {
 	background-color: #ffffff;
 }
