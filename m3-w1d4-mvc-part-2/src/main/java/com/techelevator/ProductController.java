@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -7,8 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
 @Controller
 public class ProductController {
 	//private List<Product> products;
@@ -29,8 +29,7 @@ public class ProductController {
 		request.setAttribute("productList", getProducts());
 		return "productTable";
 	}
-	
-	@RequestMapping(path={"/productDetail"}, method=RequestMethod.GET)
+	@RequestMapping("/productDetail")
 	public String showProductDetail(HttpServletRequest request) {
 		String productId = request.getParameter("productId");
 		for(Product p : getProducts()) {
@@ -40,6 +39,33 @@ public class ProductController {
 		}
 		return "productDetail";
 	}
+	
+	
+//	@RequestMapping("/productDetail")
+//	public String showProductDetail(HttpServletRequest request, HttpServletResponse response) throws IOException  {
+//		try {
+//			String productIdParam = request.getParameter("productId");
+//			Long productId = Long.parseLong(productIdParam);
+//			request.setAttribute("product", getProductById(productId));
+////		for(Product p : getProducts()) {
+////			if(p.getProductId().equals(productId)) {
+////				request.setAttribute("product", p);
+////			}
+////		}
+//		return "productDetail";
+//		} catch (NumberFormatException | IndexOutOfBoundsException e) {
+//			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+//			return null;
+//		}
+//	}
+//		private Product getProductById(Long productId) {
+//			for(Product p : products) {
+//				if(p.getProductId().equals(productId)) {
+//					return p;
+//				}
+//			}
+//			return null;
+//		}
 	
 	private List<Product> getProducts() {
 		List<Product> products = new ArrayList<Product>();

@@ -46,9 +46,24 @@ nav li a {
 nav li a:hover {
 	text-decoration: underline;
 }
+.detailview{
+	display:inline;
+	width: 300px;
+	float: left;
+	text-align: left;
+}
 img {
     max-width: 300px;
     height: auto;
+     -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+}
+.line {
+	height: 1px;
+	width: 100%;
+	display: inline-block;
+	background-color: #888888;
 }
 .stars {
 	display:block;
@@ -138,17 +153,17 @@ table {
 #listborder {
  	border-bottom: 1px solid #ddd;
 }
-td > img {
-	width: 100px;
+a > img {
+	width: 150px;
 	height: auto;
 }
 td {
-    height: 20px;
+    height: 1em;
     vertical-align: bottom;
 }
 
 th {
-    height: 50px;
+    height: 1em;
 }
 table.view > tr:nth-child(odd) {background-color: #f2f2f2}
 td.headers {

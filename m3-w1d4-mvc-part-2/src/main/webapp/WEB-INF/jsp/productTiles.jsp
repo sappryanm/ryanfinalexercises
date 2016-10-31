@@ -1,36 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file = "productHeader.jsp" %>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Product Tiles View</title>
-    <link rel="stylesheet" href="css/site.css" />
-</head>
-<body>
-    <header>
-        <h1>MVC Exercises - Views Part 2: Models</h1>        
-    </header>
-    <nav>
-        <ul>
-           <c:url var="productTable" value="/productTable"></c:url>
-			<li><a href="${productTable}"> Product Table</a><li>
-           <c:url var="productListpage" value="/productList"></c:url>
-			<li><a href="${productListpage}"> Product List</a><li>
-        </ul>
-        
-    </nav>
-    <section id="main-content">
 	<h1>Toy Department</h1>
 	<p> Product Tile View </p>
 	<div class=container>		
 	<c:forEach var="products" items="${productList}">
 		
 			<div class="column">
-			<img src="<c:url value="img/${products.imageName}"/> " />
+			<a href="productDetail?productId=${products.productId}"/><div><img src="<c:url value="img/${products.imageName}"/> " /></div></a>
 			<div>
-				<p class="productName">${products.name}</p><p id=bestSeller><c:if test="${products.topSeller == true}"> BEST SELLER!</c:if>
+				<p class="productName"><a href="productDetail?productId=${products.productId}">${products.name}</a></p><p id=bestSeller><c:if test="${products.topSeller == true}"> BEST SELLER!</c:if>
 			</p>
 			</div>
 
@@ -76,12 +55,5 @@
 		
 		
 	</c:forEach>
-	
-	
     </div>
-
-       
-
-    </section>
-</body>
-</html>
+    <%@include file="productFooter.jsp"%>

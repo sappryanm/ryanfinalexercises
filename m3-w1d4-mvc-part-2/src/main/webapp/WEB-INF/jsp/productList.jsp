@@ -1,42 +1,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Product List View</title>
-<!--     <link rel="stylesheet" href="css/site.css" /> -->
-    <c:url var="cssHref" value="/css/site.css" />
-	<link type="text/css" rel="stylesheet" href="${cssHref}" />
-</head>
-<body>
-    <header>
-        <h1>MVC Exercises - Views Part 2: Models</h1>        
-    </header>
-    <nav>
-        <ul>
-        	<c:url var="productTable" value="/productTable"></c:url>
-			<li><a href="${productTable}"> Product Table</a><li>
-            <c:url var="productTiles" value="/productTiles"></c:url>
-			<li><a href="productTiles"> Product Tiles</a></li>
-        </ul>
-        
-    </nav>
+<%@include file="productHeader.jsp"%>
     <section id="main-content">
 	<h1>Toy Department</h1>
 	<p> Product List View </p>
-	<c:url var="homeHref" value="/"></c:url>
-				<a href="${homeHref}"> Return to Homepage </a>
+
 
 	<c:forEach var="products" items="${productList}">
 			<div id="listViewPictures">
-			<img src="<c:url value="img/${products.imageName}"/> " />
+			<a href="productDetail?productId=${products.productId}"><img src="<c:url value="img/${products.imageName}"/> " /></a>
 			</div>
 			<table class="productlistview">
 			<tbody>
 			<tr>
-			<td><p class="productName">${products.name}</p><p id=bestSeller><c:if test="${products.topSeller == true}"> BEST SELLER!</c:if></p></td></td>
+			<td><a href="productDetail?productId=${products.productId}"><p class="productName">${products.name}</p></a><p id=bestSeller><c:if test="${products.topSeller == true}"> BEST SELLER!</c:if></p></td></td>
 			</tr>
 			<tr>
 			<td><p><em>${products.manufacturer}</em></p></td>
@@ -89,8 +65,4 @@
      </table>
      <div class="hline"> </div> 
 	</c:forEach>
- 
-
-    </section>
-</body>
-</html>
+<%@include file="productFooter.jsp"%>

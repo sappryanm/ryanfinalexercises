@@ -1,26 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Product Table View</title>
-    <link rel="stylesheet" href="css/site.css" />
-</head>
-<body>
-    <header>
-        <h1>MVC Exercises - Views Part 2: Models</h1>        
-    </header>
-    <nav>
-        <ul>
-            <c:url var="productListpage" value="/productList"></c:url>
-			<li><a href="${productListpage}"> Product List</a><li>
-			<c:url var="productTilespage" value="/productTiles"></c:url>
-            <li><a href="${productTilespage}">Product Tile View</a></li>
-        </ul>
-        
-    </nav>
+<%@include file="productHeader.jsp"%>
 <section id="main-content">
 	<div class="section">
 	<h1>Table View</h1>
@@ -30,14 +9,16 @@
 			<tr>
 				<td></td>
 				<c:forEach var="products" items="${productList}">
-					<td id="tableImageSize"><img src="<c:url value="img/${products.imageName}"/> " /></td>
+					
+					<td id="tableImageSize"><a href="productDetail?productId=${products.productId}"/><img src="<c:url value="img/${products.imageName}"/> " /></td>
+					
 				</c:forEach>
 			</tr>
 
 			<tr>
 				<td class="headers"> Name</td>
 				<c:forEach var="products" items="${productList}">
-					<td><p class="productName">${products.name}</p></td>
+					<td><a href="productDetail?productId=${products.productId}"/><p class="productName">${products.name}</p></td>
 				</c:forEach>
 			</tr>
 			<tr>
@@ -85,8 +66,4 @@
 			
 	</table>
 	</div>
-	
-    </section>
-
-</body>
-</html>
+<%@include file="productFooter.jsp"%>
