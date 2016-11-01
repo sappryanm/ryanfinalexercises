@@ -28,9 +28,9 @@
 			</tr>
 			<tr>
 				<td>
-					  <input type="checkbox" name="colorSelector" value="red"> red<br>
-					  <input type="checkbox" name="colorSelector" value="blue"> blue<br>
-					  <input type="checkbox" name="colorSelector" value="green"> green<br>
+					  <input type="checkbox" name="colorSelector" value="red" checked="red"> red<br>
+					  <input type="checkbox" name="colorSelector" value="blue" itemValue="blue"> blue<br>
+					  <input type="checkbox" name="colorSelector" value="green" itemValue="green"> green<br>
 				</td>
 			</tr>
 			<tr>

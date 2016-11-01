@@ -5,7 +5,7 @@
 	<c:set var="ID" value="${param.productId}" />
         <img class="detailview" src="img/${product.imageName}"/>
         <div class="detailview">
-        <p><b>${product.name}</b> <p id=bestSeller><c:if test="${product.topSeller == true}"> BEST SELLER!</c:if></p> </p]>
+        <p><b>${product.name}</b> <p id=bestSeller><c:if test="${product.topSeller == true}"> BEST SELLER!</c:if></p> </p>
 		<table>
 			<tbody>
 			<c:choose>

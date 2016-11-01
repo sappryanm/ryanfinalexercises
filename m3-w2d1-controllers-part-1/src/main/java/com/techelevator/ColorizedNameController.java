@@ -23,7 +23,7 @@ public class ColorizedNameController {
 		
 		return "colorizedName";
 	}
-	
+
 	@RequestMapping("/colorizedNameResults")
 	public String handleAlienWeightResult(HttpServletRequest request){
 		
@@ -31,19 +31,27 @@ public class ColorizedNameController {
 		
 		String first = request.getParameter("firstName");
 		String last = request.getParameter("lastName");
-		
-		 String colorSelector = request.getParameter("colorSelector");
+		String fullname = request.getParameter("lastName") + request.getParameter("firstName");
 
-		switch (colorSelector){
-			case "red": colorSelector = ("color:red;");break;
-			case "blue": colorSelector = ("color:blue;");break;
-			case "green":  colorSelector = ("color:green;");break;
-
-			default:System.out.println("Missing name part"); 
-		}
-			
+		//String colorSelector = request.getParameter("colorSelector");
 		
-		request.setAttribute("colorSelector", colorSelector);
+		 String colorSelector[] = request.getParameterValues("colorSelector"); 
+//		 if (select != null && select.length != 0) {
+//			System.out.println("You have Selected nothing");
+//		 }for (int i = 0; i < select.length; i++) {
+//			 	
+//			 //System.out.println(select[i]); 
+////		 }
+//		switch (colorSelector){
+//			case "red": colorSelector = ("red;");break;
+//			case "blue": colorSelector = ("blue;");break;
+//			case "green":  colorSelector = ("green;");break;
+//
+//			default:System.out.println("Missing name part"); 
+//		}
+//			
+//		
+//		request.setAttribute("colorSelector", colorSelector);
 		return "colorizedNameResults";
 	}
 }

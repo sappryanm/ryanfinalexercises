@@ -8,9 +8,11 @@
 	</head>
 	<body>
 		<h1>Colorized Name Results</h1>
-		
-			<p style="${colorSelector}"> ${param.firstName}, ${param.lastName} </p>
-		
-		
+		<p>First Name: ${param.firstName} </p>,<br>
+		<p>Last Name: ${param.lastName} </p>,<br>
+		<c:forEach var='colorValue' items='${paramValues.colorSelector}'> 
+  			 <p style= color:${colorValue};> ${param.firstName}, ${param.lastName} </p><br>
+		</c:forEach>
+
 </body>
 </html>

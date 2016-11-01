@@ -32,7 +32,7 @@ public class OrderedNameController {
 		String last = request.getParameter("lastName");
 		
 		 String orderFormat = request.getParameter("nameOrder");
-		
+
 		switch (orderFormat){
 			case "firstMiLast": orderFormat = (first + " " + mi + " " + last );break;
 			case "firstLast": orderFormat = (first + " " + last );break;
