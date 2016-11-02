@@ -21,12 +21,13 @@ public class FizzBuzzController {
 	public String handleFizzBuzz(){
 		
 		
-		return "fizzBuzz";
+		return "fizzBuzzRevisted";
 	}
 	
 	@RequestMapping("/fizzBuzzRevistedResult")
 	public String handleFizzBuzztResult(HttpServletRequest request){
-	
+		
+		
 		return "fizzBuzzRevistedResult";
 	}
 	}

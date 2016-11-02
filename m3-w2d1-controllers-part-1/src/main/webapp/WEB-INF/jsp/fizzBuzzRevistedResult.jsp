@@ -7,31 +7,32 @@
 		<title>fizzbuzz Name</title>
 	</head>
 <body>
+<div>
+<p>Divisable By: ${param.divisiableOne} </p>
+<p>Divisable By: ${param.divisiableTwo} </p>
+<p>Divisable By Both: ${param.divisiableOne} and ${param.divisiableTwo} </p> <br>
+<p>Alternative Fizz: ${param.alternativeFizz} </p> 
+<p>Alternative Fizz: ${param.alternativeBuzz} </p>
+</div>
 		<c:forEach begin="1" end="100" var="index">	
 
 		<c:choose>
-					<c:when test="${index % 15 == 0}">
-						<c:set var="rowClassAttribute" value="fizzbuzz" />
-						<c:set var="FB" value="fizzbuzz" />
-					</c:when>
-					<c:when test="${index % 3 == 0}">
-						<c:set var="rowClassAttribute" value="fizz" />
-						<c:set var="FB" value="fizz" />
-					</c:when>
-					<c:when test="${index % 5 == 0}">
-						<c:set var="rowClassAttribute" value="buzz" />
-						<c:set var="FB" value="buzz" />
-					</c:when>
-					<c:otherwise>
-						<c:set var="rowClassAttribute" value="" />
-						<c:set var="FB" value="${index}" />
-					</c:otherwise>
-				</c:choose>			
-		
-		<li class="${rowClassAttribute}">
-		${FB}
-		
-		</li>			
+			<c:when test="${(index % param.divisiableOne == 0) && (index % param.divisiableTwo == 0)}">
+				<c:set var="FB" value="${param.alternativeFizz}${param.alternativeBuzz}" />
+			</c:when>
+			<c:when test="${index % param.divisiableOne == 0}">
+				<c:set var="FB" value="${param.alternativeFizz}" />
+			</c:when>
+			<c:when test="${index % param.divisiableTwo == 0}">
+				<c:set var="FB" value="${param.alternativeBuzz}" />
+			</c:when>
+			<c:otherwise>
+				<c:set var="FB" value="${index}" />
+			</c:otherwise>
+		</c:choose>			
+		<div>
+		<p>${FB}</p>
+		</div>	
 		</c:forEach>
 </body>
 </html>
