@@ -1,6 +1,7 @@
 package com.techelevator.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Review {
 	private Long id;
@@ -46,4 +47,5 @@ public class Review {
 	public void setDateSubmitted(LocalDateTime dateSubmitted) {
 		this.dateSubmitted = dateSubmitted;
 	}
+
 }
