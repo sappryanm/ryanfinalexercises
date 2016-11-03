@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ page import="java.time.LocalDateTime" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 <div style="background-color: white">
@@ -18,7 +19,13 @@
 				</c:forEach>
 				
 			<p> ${index.rating } </p>
-  			 <h3> by: ${index.username} Time ${index.dateSubmitted }</h3>
+  			 <h3> by: ${index.username} </h3>
+  			 <%
+        		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+        		request.setAttribute("formatter", formatter);
+        	
+			%>
+  			 <h4>Time ${formatter.format(index.dateSubmitted) }</h4>
   			 <p> Message: ${index.text } </p>
   			  </div>
   			
