@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Favorite Color</title>
+		<title>Favorite Food</title>
 	</head>
 	<body>
 		<h1>Hello, </h1>
 		
-		<form method="post" action="page1">
-			<label for="color"> What is your favorite color</label>
-			<input type="text"	name="color" id="color" />
+		<form method="POST" action="page2">
+			<label for="color"> What is your favorite food?</label>
+			<input type="text"	name="food" id="food" />
 			<input type="submit" value="Next Page" />
 		
 		</form>

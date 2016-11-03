@@ -15,13 +15,13 @@ public class Favorites {
 	private String getFood() {
 		return food;
 	}
-	private void setFood(String food) {
+	public void setFood(String food) {
 		this.food = food;
 	}
 	private String getSeason() {
 		return season;
 	}
-	private void setSeason(String season) {
+	public void setSeason(String season) {
 		this.season = season;
 	}
 	

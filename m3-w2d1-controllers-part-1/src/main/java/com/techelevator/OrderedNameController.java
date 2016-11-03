@@ -25,7 +25,7 @@ public class OrderedNameController {
 	@RequestMapping("/orderedNameResults")
 	public String handleAlienWeightResult(HttpServletRequest request){
 		
-		List<String> nameList = new ArrayList<String>();
+
 		
 		String first = request.getParameter("firstName");
 		String mi = request.getParameter("middleName");
