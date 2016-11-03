@@ -32,7 +32,7 @@ public class HomeController {
 
 	//@Autowired
 	//Review reviewDAO;
-	JdbcTemplate jdbcTemplate;
+	//JdbcTemplate jdbcTemplate;
 	@Autowired
 	ReviewDao reviewDAO;
 	
@@ -43,9 +43,9 @@ public class HomeController {
 	@RequestMapping("/reviewForumResult")
 	public String handlereviewResult(HttpServletRequest request){
 
-		List<Review> post =  reviewDAO.getAllReviews();
-		request.setAttribute("post", post);
-		
+		List<Review> allReviews =  reviewDAO.getAllReviews();
+		request.setAttribute("allReviews", allReviews);
+		//return "redirect:/homepage";
 		return "reviewForumResult";
 		
 	}
@@ -60,13 +60,13 @@ public class HomeController {
 												@RequestParam int rating,
 												@RequestParam String text){
 
-			Review post = new Review();
-			post.setTitle(title);
-			post.setUsername(username);
-			post.setRating(rating);
-			post.setText(text);
-			post.setDateSubmitted(LocalDateTime.now());
-			reviewDAO.save(post);
+			Review review = new Review();
+			review.setTitle(title);
+			review.setUsername(username);
+			review.setRating(rating);
+			review.setText(text);
+			review.setDateSubmitted(LocalDateTime.now());
+			reviewDAO.save(review);
 		return "redirect:/reviewForumResult";
 	}
 }
