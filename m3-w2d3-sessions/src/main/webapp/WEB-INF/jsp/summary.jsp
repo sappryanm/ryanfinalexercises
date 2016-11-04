@@ -6,7 +6,7 @@
 		<title>Favorite Things Exercise</title>
 	</head>
 	<body>
-		<h1>Hello, <c:out value="" />!</h1>
+		<h1>Hello, </h1>
 		
 		<h3>Favorite Color: <c:out value="${favorites.color}"/></h3>
 		<h3>Favorite Food: <c:out value="${favorites.food}" /></h3>

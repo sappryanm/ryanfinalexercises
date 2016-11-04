@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
-@SessionAttributes("favorties")
+@SessionAttributes("favorites")
 public class FavoriteController {
 	
 	@RequestMapping(path={"/", "/page1"}, method=RequestMethod.GET)
@@ -39,7 +39,7 @@ public class FavoriteController {
 	}
 	@RequestMapping(path={"/page3"}, method=RequestMethod.GET)
 	public String showPage3(){
-		return "/page3";
+		return "page3";
 	}
 	@RequestMapping(path={"/page3"}, method=RequestMethod.POST)
 	public String handlePage3Data(@RequestParam String season, ModelMap map) {

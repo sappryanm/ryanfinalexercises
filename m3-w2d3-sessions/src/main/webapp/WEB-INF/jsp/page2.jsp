@@ -9,7 +9,7 @@
 		<h1>Hello, </h1>
 		
 		<form method="POST" action="page2">
-			<label for="color"> What is your favorite food?</label>
+			<label for="food"> What is your favorite food?</label>
 			<input type="text"	name="food" id="food" />
 			<input type="submit" value="Next Page" />
 		
