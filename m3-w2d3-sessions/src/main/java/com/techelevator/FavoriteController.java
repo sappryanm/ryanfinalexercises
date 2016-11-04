@@ -30,8 +30,9 @@ public class FavoriteController {
 		return "page2";
 	}
 	
+	
 	@RequestMapping(path={"/page2"}, method=RequestMethod.POST)
-	public String handlePage2Data(@RequestParam String food, ModelMap map) {
+	public String handlePage2Data(@RequestParam("food") String food, ModelMap map) {
 		Favorites favorites = (Favorites)map.get("favorites");
 		favorites.setFood(food);
 		//map.addAttribute("favorites", favorites);
@@ -46,12 +47,13 @@ public class FavoriteController {
 		Favorites favorites = (Favorites)map.get("favorites");
 		favorites.setSeason(season);
 		//map.addAttribute("favorites", favorites);
-		return "redirect:/Summary";
+		return "redirect:/summary";
 	}
 	
-	@RequestMapping(path={"/Summary"}, method=RequestMethod.GET) 
+	@RequestMapping(path={"/summary"}, method=RequestMethod.GET) 
 		public String handlDisplayFavoriteSummary() {
-		return "Summary";
+		
+		return "summary";
 	}
 
 

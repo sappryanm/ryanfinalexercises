@@ -12,13 +12,13 @@ public class Favorites {
 	public void setColor(String color)	{
 		this.color = color;
 	}
-	private String getFood() {
+	public String getFood() {
 		return food;
 	}
 	public void setFood(String food) {
 		this.food = food;
 	}
-	private String getSeason() {
+	public String getSeason() {
 		return season;
 	}
 	public void setSeason(String season) {

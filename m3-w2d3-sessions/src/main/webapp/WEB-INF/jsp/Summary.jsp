@@ -9,8 +9,8 @@
 		<h1>Hello, </h1>
 		
 		<h3>Favorite Color: <c:out value="${favorites.color}"/></h3>
-		<h3>Favorite Food: <c:out value="${favorites.food}" /></h3>
-		<h3>Favorite Season:<c:out value="${favorites.season}"/></h3>
+		<h3>Favorite Food: ${favorites.food}</h3>
+		<h3>Favorite Season:${favorites.season}</h3>
 		
 
 	</body>
