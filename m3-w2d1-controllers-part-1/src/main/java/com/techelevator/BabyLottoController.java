@@ -3,6 +3,7 @@ package com.techelevator;
 import static org.mockito.Matchers.intThat;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +27,6 @@ public class BabyLottoController {
 		
 		return "babylotto";
 	}
-	
 	private int countMatches(Pattern pattern, String string)
 	{
 	    Matcher matcher = pattern.matcher(string);
@@ -44,33 +44,27 @@ public class BabyLottoController {
 	@RequestMapping("/babylottoResult")
 	public String handlebabyweightResult(HttpServletRequest request){
 		
-		List<String> nameList = new ArrayList<String>();
-		
-		String[] first = request.getParameter("ticket1").split(",");
-		String[] second = request.getParameter("ticket2").split(",");
-		String[] third = request.getParameter("ticket3").split(",");
-		String[] fourth = request.getParameter("ticket4").split(",");
-		String[] fifth = request.getParameter("ticket5").split(",");
-		
-		int test1;
-		if (nameList.contains(first)) {
-		    test1 = 10;
-		}
-		//int occurance = StringUtils.countOccurrencesOf("first", ".");
-		Pattern pattern = Pattern.compile("ticket1", Pattern.LITERAL);
-		int count = countMatches(pattern, "1+1+1"); // Returns 2
-
-
+		//List<String> nameList = new ArrayList<String>();
+		List<String> tickets = Arrays.asList(request.getParameterValues("ticket"));
+		List<String> colors = new ArrayList<String>();
+		colors.add("black");
+		colors.add("gray");
+		colors.add("green");
+		String[] ticketInput = request.getParameter("ticket").split(",");
+		List<String[]> ticketList = Arrays.asList(ticketInput);
+	}
         
-
+//
 //        for (int i = 0; i < first.length; i++)
 //        {        
-//            if(newFirst.equals(first[i]))
+//            if(tickets.equals(first[0]) == tickets.equals(first[1]) == tickets.equals(first[2]))
 //            {
-//                test = "Valid";
+//                colors.get(2);
+//            } else if (tickets. {
+//            	colors.get(2);
 //            }
-//            newfirst = 10;
-//        }
+           
+    
 
 //		int[] firstInt = new int[first.length];
 //		    for (int i=0; i < first.length; i++) {
@@ -93,10 +87,13 @@ public class BabyLottoController {
 //			default:System.out.println("Missing name part"); 
 //		}
 //			
+        request.setAttribute("colors", colors);
 		
-//		request.setAttribute("orderFormat", orderFormat);
 		return "babylottoResult";
 	}
+
+
+
 //	   private void sumArray(){
 //		      
 //		      int sum = 0;

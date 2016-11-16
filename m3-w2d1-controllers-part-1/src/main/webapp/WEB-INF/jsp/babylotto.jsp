@@ -16,7 +16,7 @@
 					<label for="ticketBox1" style="color: black">Ticket 1:</label>
 				</td>
 				<td>
-					<input type="text" name="ticket1" id="ticket1"/>
+					<input type="text" name="ticket" id="ticket"/>
 				</td>
 			</tr>
 			<tr>
@@ -24,7 +24,7 @@
 					<label for="ticketBox2" style="color: black">Ticket 2:</label>
 				</td>
 				<td>
-					<input type="text" name="ticket2" id="ticket2"/>
+					<input type="text" name="ticket" id="ticket"/>
 				</td>
 			</tr>
 			<tr>
@@ -32,7 +32,7 @@
 					<label for="ticketBox3" style="color: black">Ticket 3</label>
 				</td>
 				<td>
-					<input type="text" name="ticket3" id="ticket3"/>
+					<input type="text" name="ticket" id="ticket"/>
 				</td>
 			</tr>
 			<tr>
@@ -40,7 +40,7 @@
 					<label for="ticketBox4" style="color: black">Ticket 4:</label>
 				</td>
 				<td>
-					<input type="text" name="ticket4" id="ticket4"/>
+					<input type="text" name="ticket" id="ticket"/>
 				</td>
 			</tr>
 			<tr>
@@ -48,7 +48,7 @@
 					<label for="ticketBox5" style="color: black">Ticket 5:</label>
 				</td>
 				<td>
-					<input type="text" name="ticket5" id="ticket5"/>
+					<input type="text" name="ticket" id="ticket"/>
 				</td>
 			</tr>
 			<tr>
