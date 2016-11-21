@@ -8,13 +8,13 @@
   <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
 </head>
 <body>
-  <form>
+  <form id="confidentialForm">
     <h1>Confidential Information</h1>
     <label for="birthday">Birthday</label>
-    <input type="text" name="birthday" id="birthday"/>
+    <input type="text" name="birthday" id="birthday" placeholder="mm/dd/yyy"/>
     <br/>
     <label for="ssn">SSN</label>
-    <input type="text" name="ssn" id="ssn"/>
+    <input type="text" name="ssn" id="ssn" placeholder="123-32-2313"/>
     <br/>
     <label for="address1">Address</label>
     <input type="text" name="address1" id="address1"/>
@@ -43,6 +43,6 @@
     <br/>
     <input type="submit" value="Keep It Secret"><br/>
   </form>
-  <script src="confidential-validation.js"></script>
+  <script src="confiential-val.js"></script>
 </body>
 </html>
