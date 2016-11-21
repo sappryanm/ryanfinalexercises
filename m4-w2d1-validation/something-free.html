@@ -3,9 +3,12 @@
 <head>
   <title>Sign-up for Something Free</title>
   <link rel="stylesheet" href="validation.css">
+  <script src="jquery-2.2.2.js"></script>
+  <script src="jquery.validate.js"></script>
+  <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
 </head>
 <body>
-  <form>
+  <form id= "somethingFreeForm">
     <h1>Sign-up for Something Free</h1>
     <label for="email">Email</label>
     <input type="text" name="email" id="email"/>
@@ -56,5 +59,6 @@
     <input type="checkbox" class="subcheck" id="chkBitsNBytes" /> Bits n Bytes<br/>
     <input type="submit" value="Give me my free stuff"><br/>
   </form>
+	<script src="something-free-validation.js"></script>
 </body>
 </html>
