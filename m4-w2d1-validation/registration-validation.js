@@ -4,27 +4,22 @@ $(document).ready(function () {
 
     // Validate takes an object, not a function
     // Objects in javascript use { .. } notation and are the same as key / value pairs
-    $("#applicationForm").validate({
+    $("#registrationForm").validate({
 
         debug: true,
         rules: {
 
-            fName: {
+            firstName: {
                 required: true,         //makes first name required
             },
-            lName: {
+            lastName: {
                 required: true,         //makes last name required
                 minlength: 2,           //requires min length of 2 characters
                 lettersonly: true       //using an additional jquery validation method
             },
-            emailAddr: {
+            email: {
                 email: true,            //require this field to only accept email                
-                //required: {
-                //    depends: function (element) {
-                //        return $("#chkEmail").is(":checked");
-                //    }
-                //},
-                techElevatorEmail: true, //uses custom validator for @techelevator.com
+
             },
             password: {
                 required: true,         //requires password field
@@ -37,18 +32,50 @@ $(document).ready(function () {
             //This one looks funky because it renders the error label before the checkbox
             //The way to make this truly good is override the error placement for checkbox which is tedious
 			//See something like this http://stackoverflow.com/questions/26498899/jquery-validate-custom-error-message-location
-            favoriteCompanies: {
-                minlength: 2            //make sure the user selects 2 boxes if they select any at all
+            homePhone: {
+                required: true,
+					phoneUS: true, 
+					minlength: 9,
+            },
+            officePhone: {
+                required: true,
+					phoneUS: true, 
+					minlength: 9,           
+            },
+            cellPhone: {
+                required: true,
+					phoneUS: true, 
+					minlength: 9,           
             }
         },
         messages: {
-            fName: {
+            firstName: {
                 required: "You must provide a first name"
             },
-            lName: {
+            lastName: {
                 required: "You must provide a last name",
                 minlength: "Last name can't be less than 2 characters"
+            },
+            email: {
+                email: "You must provide a valid email"
+            },
+            confirm: {
+                required: "You must provide a the same password",
+
+            },
+            homePhone: {
+                required: "You must provide a home phone",
+
+            },
+            officePhone: {
+                required: "You must select an office home",
+
+            },
+            cellPhone: {
+                required: "You must select a Cell PHone",
+
             }
+  
         },
         errorClass: "error",
         validClass: "valid"
@@ -59,9 +86,7 @@ $(document).ready(function () {
 
 //Create a custom validation rule that only permits email addresses that end with @techelevator.com
 //https://jqueryvalidation.org/jQuery.validator.addMethod
-$.validator.addMethod("techElevatorEmail", function (value, index) {
-    return value.toLowerCase().endsWith("@techelevator.com");  // it would be safer to consider a regex here. 
-}, "Please enter a techelevator.com email");
+
 
 $.validator.addMethod("strongpassword", function (value, index) {
     return value.match(/[A-Z]/) && value.match(/[a-z]/) && value.match(/\d/);  //check for one capital letter, one lower case letter, one num
