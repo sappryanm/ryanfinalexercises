@@ -47,14 +47,17 @@ $(document).ready(function () {
     //1516
     //var inputTypeValue = $("#remarks").val();
     //console.log(inputTypeValue);
-	 marker = $('<span />').insertBefore('#remarks');
-	 $('#remarks').detach().attr('type', 'text').insertAfter(marker);
-	 marker.remove();
-	// //var type = node.nodeType;
-	//  $( "input[type="hidden" i]" ).removeProp( "type, hidden");
-	//   $( "input.remarks" ).prop( "type = text");
-	//   $("#remarks").val("Your remarks go here");
-		//17
+	 $("input[type='hidden']").each(function(){
+	   var name = $(this).attr('remarks'); // grab name of original
+	   var value = $(this).attr('Your remarks go here'); // grab value of original
+	   /* create new visible input */
+	   var html = '<input type="text" name="remarks" value="Your remarks Go here" />';
+	   $(this).after(html).remove(); // add new, then remove original input
+	});
+	//17
+		$("input").siblings(":checkbox").attr("checked", "checked");
+		//18
+		 $("ul").append("<li class=poultry> poultry </li>");
 	     //$("#remarks").val("");  
 	   // });
 		// para = $( "input.remarks" );
