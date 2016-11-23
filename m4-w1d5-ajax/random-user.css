@@ -1,14 +1,19 @@
 .main-profile { 
-    background-color: #688aad;
+    background-color: @brand-success;
     border-radius: 5px;
 }
-
+div.container.main-profile {
+	background-color: #0d75c1;
+}
 .main-profile * { 
-    color: #FFF;
+    color: #333;
+
+	
 }
 
+
 #refreshButton { 
-    position: fixed;
+    position: left;
     right: 0;
     top: 0;
 }
