@@ -10,9 +10,9 @@ $(document).ready(function () {
 
 		 // var datum = opentsdb.datum();
 		  $.ajax({
-		    url: 'https://crossorigin.me/https://www.opentdb.com/api.php?amount=3&type=multiple',
+		    url: 'https://robwu.nl/cors-anywhere.htmlhttps://www.opentdb.com/api.php?amount=3&type=multiple',
 		    dataType: 'json',
-
+			 type: "GET",
 		    success: function(data) {
 		      console.log(data);
 				//("#category").append(data.results[0].category);
@@ -74,7 +74,7 @@ $(document).ready(function () {
 	     });
 
 	 });
-
+});
 	 // This displays the current question AND the choices
 	 function displayCurrentQuestion() {
 
